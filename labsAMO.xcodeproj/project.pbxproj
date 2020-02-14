@@ -27,7 +27,7 @@
 		5F363B4423F740EC0058459B /* ThirdTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTaskViewController.swift; sourceTree = "<group>"; };
 		5F363B4623F741030058459B /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		5F363B4823F7486B0058459B /* LabsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsTableViewController.swift; sourceTree = "<group>"; };
-		5F80746A23F692AE00F90302 /* lab1AMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab1AMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F80746A23F692AE00F90302 /* labsAMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = labsAMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F80746D23F692AE00F90302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F80747123F692AE00F90302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F80747423F692AE00F90302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		5F80746123F692AE00F90302 = {
 			isa = PBXGroup;
 			children = (
-				5F80746C23F692AE00F90302 /* lab1AMO */,
+				5F80746C23F692AE00F90302 /* labsAMO */,
 				5F80746B23F692AE00F90302 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,12 +91,12 @@
 		5F80746B23F692AE00F90302 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F80746A23F692AE00F90302 /* lab1AMO.app */,
+				5F80746A23F692AE00F90302 /* labsAMO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5F80746C23F692AE00F90302 /* lab1AMO */ = {
+		5F80746C23F692AE00F90302 /* labsAMO */ = {
 			isa = PBXGroup;
 			children = (
 				5F80746D23F692AE00F90302 /* AppDelegate.swift */,
@@ -109,15 +109,15 @@
 				5F80747B23F692B000F90302 /* Info.plist */,
 				5F363B4823F7486B0058459B /* LabsTableViewController.swift */,
 			);
-			path = lab1AMO;
+			path = labsAMO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5F80746923F692AE00F90302 /* lab1AMO */ = {
+		5F80746923F692AE00F90302 /* labsAMO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F80747E23F692B000F90302 /* Build configuration list for PBXNativeTarget "lab1AMO" */;
+			buildConfigurationList = 5F80747E23F692B000F90302 /* Build configuration list for PBXNativeTarget "labsAMO" */;
 			buildPhases = (
 				5F80746623F692AE00F90302 /* Sources */,
 				5F80746723F692AE00F90302 /* Frameworks */,
@@ -127,9 +127,9 @@
 			);
 			dependencies = (
 			);
-			name = lab1AMO;
+			name = labsAMO;
 			productName = lab1AMO;
-			productReference = 5F80746A23F692AE00F90302 /* lab1AMO.app */;
+			productReference = 5F80746A23F692AE00F90302 /* labsAMO.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -147,7 +147,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5F80746523F692AE00F90302 /* Build configuration list for PBXProject "lab1AMO" */;
+			buildConfigurationList = 5F80746523F692AE00F90302 /* Build configuration list for PBXProject "labsAMO" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -160,7 +160,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5F80746923F692AE00F90302 /* lab1AMO */,
+				5F80746923F692AE00F90302 /* labsAMO */,
 			);
 		};
 /* End PBXProject section */
@@ -338,13 +338,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M92VXVU7J9;
-				INFOPLIST_FILE = lab1AMO/Info.plist;
+				INFOPLIST_FILE = labsAMO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ddanilyuk.lab1AMO;
-				PRODUCT_NAME = lab1AMO;
+				PRODUCT_BUNDLE_IDENTIFIER = ddanilyuk.labsAMO;
+				PRODUCT_NAME = labsAMO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -356,13 +356,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M92VXVU7J9;
-				INFOPLIST_FILE = lab1AMO/Info.plist;
+				INFOPLIST_FILE = labsAMO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ddanilyuk.lab1AMO;
-				PRODUCT_NAME = lab1AMO;
+				PRODUCT_BUNDLE_IDENTIFIER = ddanilyuk.labsAMO;
+				PRODUCT_NAME = labsAMO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -371,7 +371,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5F80746523F692AE00F90302 /* Build configuration list for PBXProject "lab1AMO" */ = {
+		5F80746523F692AE00F90302 /* Build configuration list for PBXProject "labsAMO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F80747C23F692B000F90302 /* Debug */,
@@ -380,7 +380,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F80747E23F692B000F90302 /* Build configuration list for PBXNativeTarget "lab1AMO" */ = {
+		5F80747E23F692B000F90302 /* Build configuration list for PBXNativeTarget "labsAMO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5F80747F23F692B000F90302 /* Debug */,
