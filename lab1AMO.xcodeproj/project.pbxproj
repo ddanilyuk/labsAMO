@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F363B4023F73AB90058459B /* Lab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F363B3F23F73AB90058459B /* Lab2.storyboard */; };
+		5F363B4523F740EC0058459B /* ThirdTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4423F740EC0058459B /* ThirdTaskViewController.swift */; };
+		5F363B4723F741030058459B /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4623F741030058459B /* GraphViewController.swift */; };
+		5F363B4923F7486B0058459B /* LabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4823F7486B0058459B /* LabsTableViewController.swift */; };
 		5F80746E23F692AE00F90302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80746D23F692AE00F90302 /* AppDelegate.swift */; };
-		5F80747023F692AE00F90302 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80746F23F692AE00F90302 /* SceneDelegate.swift */; };
 		5F80747223F692AE00F90302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80747123F692AE00F90302 /* ViewController.swift */; };
 		5F80747523F692AE00F90302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F80747323F692AE00F90302 /* Main.storyboard */; };
 		5F80747723F692B000F90302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F80747623F692B000F90302 /* Assets.xcassets */; };
 		5F80747A23F692B000F90302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F80747823F692B000F90302 /* LaunchScreen.storyboard */; };
+		5F80748223F698C600F90302 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748123F698C600F90302 /* Extensions.swift */; };
+		5F80748423F6999E00F90302 /* FirstTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748323F6999E00F90302 /* FirstTaskViewController.swift */; };
+		5F80748623F6B41700F90302 /* SecondTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748523F6B41700F90302 /* SecondTaskViewController.swift */; };
+		5F80748823F72E8500F90302 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748723F72E8500F90302 /* CustomNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F363B3F23F73AB90058459B /* Lab2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lab2.storyboard; sourceTree = "<group>"; };
+		5F363B4423F740EC0058459B /* ThirdTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTaskViewController.swift; sourceTree = "<group>"; };
+		5F363B4623F741030058459B /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		5F363B4823F7486B0058459B /* LabsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsTableViewController.swift; sourceTree = "<group>"; };
 		5F80746A23F692AE00F90302 /* lab1AMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lab1AMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F80746D23F692AE00F90302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F80746F23F692AE00F90302 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5F80747123F692AE00F90302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5F80747423F692AE00F90302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F80747623F692B000F90302 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F80747923F692B000F90302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F80747B23F692B000F90302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F80748123F698C600F90302 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5F80748323F6999E00F90302 /* FirstTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTaskViewController.swift; sourceTree = "<group>"; };
+		5F80748523F6B41700F90302 /* SecondTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTaskViewController.swift; sourceTree = "<group>"; };
+		5F80748723F72E8500F90302 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +51,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F363B4123F73F1D0058459B /* Lab1 */ = {
+			isa = PBXGroup;
+			children = (
+				5F80747323F692AE00F90302 /* Main.storyboard */,
+				5F80748323F6999E00F90302 /* FirstTaskViewController.swift */,
+				5F80748523F6B41700F90302 /* SecondTaskViewController.swift */,
+				5F363B4423F740EC0058459B /* ThirdTaskViewController.swift */,
+				5F363B4623F741030058459B /* GraphViewController.swift */,
+			);
+			path = Lab1;
+			sourceTree = "<group>";
+		};
+		5F363B4223F73F520058459B /* Lab2 */ = {
+			isa = PBXGroup;
+			children = (
+				5F363B3F23F73AB90058459B /* Lab2.storyboard */,
+			);
+			path = Lab2;
+			sourceTree = "<group>";
+		};
+		5F363B4323F73F640058459B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5F80748723F72E8500F90302 /* CustomNavigationController.swift */,
+				5F80748123F698C600F90302 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5F80746123F692AE00F90302 = {
 			isa = PBXGroup;
 			children = (
@@ -57,12 +100,14 @@
 			isa = PBXGroup;
 			children = (
 				5F80746D23F692AE00F90302 /* AppDelegate.swift */,
-				5F80746F23F692AE00F90302 /* SceneDelegate.swift */,
 				5F80747123F692AE00F90302 /* ViewController.swift */,
-				5F80747323F692AE00F90302 /* Main.storyboard */,
+				5F363B4123F73F1D0058459B /* Lab1 */,
+				5F363B4223F73F520058459B /* Lab2 */,
+				5F363B4323F73F640058459B /* Helpers */,
 				5F80747623F692B000F90302 /* Assets.xcassets */,
 				5F80747823F692B000F90302 /* LaunchScreen.storyboard */,
 				5F80747B23F692B000F90302 /* Info.plist */,
+				5F363B4823F7486B0058459B /* LabsTableViewController.swift */,
 			);
 			path = lab1AMO;
 			sourceTree = "<group>";
@@ -128,6 +173,7 @@
 				5F80747A23F692B000F90302 /* LaunchScreen.storyboard in Resources */,
 				5F80747723F692B000F90302 /* Assets.xcassets in Resources */,
 				5F80747523F692AE00F90302 /* Main.storyboard in Resources */,
+				5F363B4023F73AB90058459B /* Lab2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +186,13 @@
 			files = (
 				5F80747223F692AE00F90302 /* ViewController.swift in Sources */,
 				5F80746E23F692AE00F90302 /* AppDelegate.swift in Sources */,
-				5F80747023F692AE00F90302 /* SceneDelegate.swift in Sources */,
+				5F80748623F6B41700F90302 /* SecondTaskViewController.swift in Sources */,
+				5F363B4523F740EC0058459B /* ThirdTaskViewController.swift in Sources */,
+				5F80748423F6999E00F90302 /* FirstTaskViewController.swift in Sources */,
+				5F363B4723F741030058459B /* GraphViewController.swift in Sources */,
+				5F80748223F698C600F90302 /* Extensions.swift in Sources */,
+				5F363B4923F7486B0058459B /* LabsTableViewController.swift in Sources */,
+				5F80748823F72E8500F90302 /* CustomNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,9 +344,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ddanilyuk.lab1AMO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = lab1AMO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,9 +362,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ddanilyuk.lab1AMO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = lab1AMO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
