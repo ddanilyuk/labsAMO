@@ -1,6 +1,6 @@
 //
 //  LabsTableViewController.swift
-//  lab1AMO
+//  labsAMO
 //
 //  Created by Денис Данилюк on 14.02.2020.
 //  Copyright © 2020 Денис Данилюк. All rights reserved.

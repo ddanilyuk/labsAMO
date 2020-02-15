@@ -11,6 +11,7 @@
 		5F363B4523F740EC0058459B /* ThirdTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4423F740EC0058459B /* ThirdTaskViewController.swift */; };
 		5F363B4723F741030058459B /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4623F741030058459B /* GraphViewController.swift */; };
 		5F363B4923F7486B0058459B /* LabsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4823F7486B0058459B /* LabsTableViewController.swift */; };
+		5F363B4B23F751EB0058459B /* FirstTask2LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4A23F751EB0058459B /* FirstTask2LabViewController.swift */; };
 		5F80746E23F692AE00F90302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80746D23F692AE00F90302 /* AppDelegate.swift */; };
 		5F80747223F692AE00F90302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80747123F692AE00F90302 /* ViewController.swift */; };
 		5F80747523F692AE00F90302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F80747323F692AE00F90302 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		5F363B4423F740EC0058459B /* ThirdTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTaskViewController.swift; sourceTree = "<group>"; };
 		5F363B4623F741030058459B /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		5F363B4823F7486B0058459B /* LabsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsTableViewController.swift; sourceTree = "<group>"; };
+		5F363B4A23F751EB0058459B /* FirstTask2LabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTask2LabViewController.swift; sourceTree = "<group>"; };
 		5F80746A23F692AE00F90302 /* labsAMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = labsAMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F80746D23F692AE00F90302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F80747123F692AE00F90302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				5F363B3F23F73AB90058459B /* Lab2.storyboard */,
+				5F363B4A23F751EB0058459B /* FirstTask2LabViewController.swift */,
 			);
 			path = Lab2;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				5F80748623F6B41700F90302 /* SecondTaskViewController.swift in Sources */,
 				5F363B4523F740EC0058459B /* ThirdTaskViewController.swift in Sources */,
 				5F80748423F6999E00F90302 /* FirstTaskViewController.swift in Sources */,
+				5F363B4B23F751EB0058459B /* FirstTask2LabViewController.swift in Sources */,
 				5F363B4723F741030058459B /* GraphViewController.swift in Sources */,
 				5F80748223F698C600F90302 /* Extensions.swift in Sources */,
 				5F363B4923F7486B0058459B /* LabsTableViewController.swift in Sources */,

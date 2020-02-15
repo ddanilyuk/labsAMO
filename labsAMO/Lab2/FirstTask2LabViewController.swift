@@ -1,19 +1,18 @@
 //
-//  ThirdTaskViewController.swift
+//  FirstTask2LabViewController.swift
 //  labsAMO
 //
-//  Created by Денис Данилюк on 14.02.2020.
+//  Created by Денис Данилюк on 15.02.2020.
 //  Copyright © 2020 Денис Данилюк. All rights reserved.
 //
 
 import UIKit
 
-class ThirdTaskViewController: UIViewController {
+class FirstTask2LabViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
-
         // Do any additional setup after loading the view.
     }
     

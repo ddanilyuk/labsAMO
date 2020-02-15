@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  lab1AMO
+//  labsAMO
 //
 //  Created by Денис Данилюк on 14.02.2020.
 //  Copyright © 2020 Денис Данилюк. All rights reserved.
@@ -72,17 +72,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             // maybe do something on completion here
         })
         
-//        if let window = appDelegate?.window {
-////            let loginVC = loginStoryboard.instantiateInitialViewController()
-//            
-//            //window.rootViewController = mainVC
-//            
-//        }
-        
-//        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        guard let vc : UITabBarController = mainStoryboard.instantiateViewController(withIdentifier: UITabBarController.identifier) as? UITabBarController else { return }
-        
-
         
         tableView.deselectRow(at: indexPath, animated: true)
         

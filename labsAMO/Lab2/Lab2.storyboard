@@ -38,12 +38,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwJ-jr-4f1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="-686"/>
+            <point key="canvasLocation" x="174" y="-686"/>
         </scene>
         <!--Лаб 2 Завдання 1-->
         <scene sceneID="p10-Wq-6dg">
             <objects>
-                <viewController id="oc1-FB-xIM" sceneMemberID="viewController">
+                <viewController id="oc1-FB-xIM" customClass="FirstTask2LabViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GUT-X8-4xF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
