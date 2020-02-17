@@ -8,8 +8,8 @@
 
 import UIKit
 
-class GraphViewController: UINavigationController {
-    
+class GraphViewController: UIViewController {
+        
     @IBOutlet weak var imageView: UIImageView!
     
     var image: UIImage? = UIImage()
@@ -17,10 +17,12 @@ class GraphViewController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if image != nil {
-            imageView.image = image
+        if let graphImage = image {
+            imageView.image = graphImage
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
     }
     
 

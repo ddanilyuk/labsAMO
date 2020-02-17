@@ -60,6 +60,13 @@ class FirstTaskViewController: UIViewController {
         return String(round(1000 * result)/1000)
     }
     
+    @IBAction func showGraphButton(_ sender: UIBarButtonItem) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        guard let graphVC : GraphViewController = mainStoryboard.instantiateViewController(withIdentifier: GraphViewController.identifier) as? GraphViewController else { return }
+        graphVC.image = UIImage(named: "lab1Graph1")
+        present(graphVC, animated: true, completion: nil)
+    }
     
     func factorial(_ n: Double) -> Double {
         if n == 0 {
@@ -75,5 +82,11 @@ class FirstTaskViewController: UIViewController {
         return n * factorialInt64(n-1)
     }
 
-    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showGraph1" {
+//            if let destination = segue.destination as? GraphViewController {
+//                destination.image = UIImage(named: "lab1Graph1")
+//            }
+//        }
+//    }
 }

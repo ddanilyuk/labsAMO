@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
-        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: ViewController.identifier)
+        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: LabChooserViewController.identifier)
         let nav1 = UINavigationController()
         
         nav1.navigationBar.prefersLargeTitles = true

@@ -21,6 +21,8 @@ class SecondTaskViewController: UIViewController {
     @IBOutlet weak var bSignButton: UIButton!
     @IBOutlet weak var kSignButton: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
@@ -54,6 +56,16 @@ class SecondTaskViewController: UIViewController {
         resultLabel.text = "y = \(y)"
     }
     
+    @IBAction func didPressShowGraph(_ sender: UIBarButtonItem) {
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+
+        guard let graphVC : GraphViewController = mainStoryboard.instantiateViewController(withIdentifier: GraphViewController.identifier) as? GraphViewController else { return }
+        graphVC.image = UIImage(named: "lab1Graph2")
+        present(graphVC, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func didPressChangeXSign(_ sender: UIButton) {
         changeSign(xSignButton)
     }
@@ -77,4 +89,12 @@ class SecondTaskViewController: UIViewController {
             buttton.setTitle("+", for: .normal)
         }
     }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showGraph2" {
+//            if let destination = segue.destination as? GraphViewController {
+//                destination.image = UIImage(named: "lab1Graph2")
+//            }
+//        }
+//    }
+    
 }

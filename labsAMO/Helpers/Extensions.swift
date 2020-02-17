@@ -75,7 +75,7 @@ extension UIViewController {
     
     @objc func show(sender: UIBarButtonItem) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let vc : ViewController = mainStoryboard.instantiateViewController(withIdentifier: ViewController.identifier) as? ViewController else { return }
+        guard let vc : LabChooserViewController = mainStoryboard.instantiateViewController(withIdentifier: LabChooserViewController.identifier) as? LabChooserViewController else { return }
         present(vc, animated: true, completion: nil)
     }
 }
