@@ -8,15 +8,17 @@
 
 import UIKit
 
-class GraphViewController: UIViewController {
+class GraphViewController: UIViewController, UIScrollViewDelegate {
         
     @IBOutlet weak var imageView: UIImageView!
     
     var image: UIImage? = UIImage()
 
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.delegate = self
         if let graphImage = image {
             imageView.image = graphImage
         }
@@ -25,6 +27,9 @@ class GraphViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
     }
     
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
 
     /*
     // MARK: - Navigation

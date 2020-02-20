@@ -7,22 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="1D7-4z-ysx">
-            <objects>
-                <viewController id="84j-J9-fzz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KNt-Xo-Q0n">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="aRw-eg-uCS"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="iYt-g1-jqz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w5e-2N-nBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="174" y="77"/>
-        </scene>
         <!--Завдання 1-->
         <scene sceneID="VP2-aj-wFs">
             <objects>
@@ -43,15 +27,109 @@
         <!--Лаб 2 Завдання 1-->
         <scene sceneID="p10-Wq-6dg">
             <objects>
-                <viewController id="oc1-FB-xIM" customClass="FirstTask2LabViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FirstTask2LabViewController" id="oc1-FB-xIM" customClass="FirstTask2LabViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GUT-X8-4xF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8f-Yz-whq">
+                                <rect key="frame" x="8" y="246" width="398" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[A]:   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfE-Fl-klg">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введіть [A]" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZCz-5R-FYr">
+                                        <rect key="frame" x="41.5" y="0.0" width="356.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lab2Task1" translatesAutoresizingMaskIntoConstraints="NO" id="Srt-yB-pm8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ICm-Xz-dnp"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwg-bi-m10">
+                                <rect key="frame" x="107" y="328.5" width="200" height="30"/>
+                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9IG-qb-lh0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="EL0-Fa-f7w"/>
+                                </constraints>
+                                <state key="normal" title="Порахувати">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didPressGetResult:" destination="oc1-FB-xIM" eventType="touchUpInside" id="dAV-Q9-VSH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[A] = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVD-rh-VGI">
+                                <rect key="frame" x="8" y="288" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AgJ-xg-oP6">
+                                <rect key="frame" x="10" y="378.5" width="394" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Час:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWf-7D-JUs">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="59.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[A] = " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5e1-Hv-ixd">
+                                        <rect key="frame" x="0.0" y="59.5" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="0M5-Q2-eNS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="niI-GC-dyk" firstAttribute="trailing" secondItem="M8f-Yz-whq" secondAttribute="trailing" constant="8" id="010-Hv-bn4"/>
+                            <constraint firstItem="Srt-yB-pm8" firstAttribute="top" secondItem="niI-GC-dyk" secondAttribute="top" id="0Vj-BJ-la0"/>
+                            <constraint firstItem="AgJ-xg-oP6" firstAttribute="top" secondItem="iwg-bi-m10" secondAttribute="bottom" constant="20" id="6fO-2Z-bjj"/>
+                            <constraint firstItem="niI-GC-dyk" firstAttribute="trailing" secondItem="Srt-yB-pm8" secondAttribute="trailing" id="6mc-hk-liV"/>
+                            <constraint firstItem="iwg-bi-m10" firstAttribute="top" secondItem="SVD-rh-VGI" secondAttribute="bottom" constant="20" id="8Z8-RL-mZC"/>
+                            <constraint firstItem="niI-GC-dyk" firstAttribute="trailing" secondItem="SVD-rh-VGI" secondAttribute="trailing" constant="8" id="Nkl-WY-cE3"/>
+                            <constraint firstItem="M8f-Yz-whq" firstAttribute="top" secondItem="Srt-yB-pm8" secondAttribute="bottom" constant="30" id="Ohr-8w-hn4"/>
+                            <constraint firstItem="iwg-bi-m10" firstAttribute="centerX" secondItem="niI-GC-dyk" secondAttribute="centerX" id="P74-QE-CD8"/>
+                            <constraint firstItem="niI-GC-dyk" firstAttribute="trailing" secondItem="AgJ-xg-oP6" secondAttribute="trailing" constant="10" id="Qry-kd-Yko"/>
+                            <constraint firstItem="AgJ-xg-oP6" firstAttribute="leading" secondItem="niI-GC-dyk" secondAttribute="leading" constant="10" id="W4U-i2-DTz"/>
+                            <constraint firstItem="SVD-rh-VGI" firstAttribute="top" secondItem="M8f-Yz-whq" secondAttribute="bottom" constant="8" id="gCL-8Q-Jam"/>
+                            <constraint firstItem="SVD-rh-VGI" firstAttribute="leading" secondItem="niI-GC-dyk" secondAttribute="leading" constant="8" id="kEj-iD-wVV"/>
+                            <constraint firstItem="Srt-yB-pm8" firstAttribute="leading" secondItem="niI-GC-dyk" secondAttribute="leading" id="muR-Dj-ZWX"/>
+                            <constraint firstItem="M8f-Yz-whq" firstAttribute="leading" secondItem="niI-GC-dyk" secondAttribute="leading" constant="8" id="vbi-IA-f8X"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="niI-GC-dyk"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" id="88u-dl-6eO"/>
                     <navigationItem key="navigationItem" title="Лаб 2 Завдання 1" id="4jl-Qt-EtX"/>
+                    <connections>
+                        <outlet property="aDetailTextLabel" destination="SVD-rh-VGI" id="p3a-PJ-KVl"/>
+                        <outlet property="aSortedTextLabel" destination="5e1-Hv-ixd" id="wyV-dX-sCG"/>
+                        <outlet property="aTextField" destination="ZCz-5R-FYr" id="9wT-YT-dYZ"/>
+                        <outlet property="timeTextLabel" destination="FWf-7D-JUs" id="Fd6-Gt-0x2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Yj-bv-Bjo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +146,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="K10-9o-XDe" kind="relationship" relationship="viewControllers" id="n4B-dN-5el"/>
-                        <segue destination="84j-J9-fzz" kind="relationship" relationship="viewControllers" id="LHh-AI-TmD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpJ-KI-TL4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -78,5 +155,6 @@
     </scenes>
     <resources>
         <image name="1.circle" catalog="system" width="64" height="60"/>
+        <image name="lab2Task1" width="882" height="44"/>
     </resources>
 </document>
