@@ -381,8 +381,8 @@
                                     <constraint firstItem="ENq-kz-w9O" firstAttribute="height" secondItem="NoS-7F-SoE" secondAttribute="height" id="5WR-jc-CKQ"/>
                                     <constraint firstItem="ENq-kz-w9O" firstAttribute="centerY" secondItem="NoS-7F-SoE" secondAttribute="centerY" id="DnF-dj-5RX"/>
                                     <constraint firstItem="ENq-kz-w9O" firstAttribute="centerX" secondItem="NoS-7F-SoE" secondAttribute="centerX" id="Jim-Uo-ydm"/>
-                                    <constraint firstAttribute="bottom" secondItem="ENq-kz-w9O" secondAttribute="bottom" constant="-303" id="WBm-E9-GGX"/>
-                                    <constraint firstAttribute="trailing" secondItem="ENq-kz-w9O" secondAttribute="trailing" constant="-67" id="fLP-2a-xgF"/>
+                                    <constraint firstAttribute="bottom" secondItem="ENq-kz-w9O" secondAttribute="bottom" id="WBm-E9-GGX"/>
+                                    <constraint firstAttribute="trailing" secondItem="ENq-kz-w9O" secondAttribute="trailing" id="fLP-2a-xgF"/>
                                     <constraint firstItem="ENq-kz-w9O" firstAttribute="width" secondItem="NoS-7F-SoE" secondAttribute="width" id="kqf-LE-3mI"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="HH3-TO-caK"/>

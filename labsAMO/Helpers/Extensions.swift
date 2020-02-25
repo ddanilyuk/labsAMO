@@ -56,7 +56,6 @@ extension UIViewController {
 
 
 extension UIView {
-    
     class var identifier: String {
         return String(describing: self)
     }
@@ -77,5 +76,13 @@ extension UIViewController {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         guard let vc : LabChooserViewController = mainStoryboard.instantiateViewController(withIdentifier: LabChooserViewController.identifier) as? LabChooserViewController else { return }
         present(vc, animated: true, completion: nil)
+    }
+}
+
+
+extension Double {
+    func rounded(digits: Int) -> Double {
+        let multiplier = pow(10.0, Double(digits))
+        return (self * multiplier).rounded() / multiplier
     }
 }

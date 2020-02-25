@@ -64,7 +64,7 @@ class ThirdTaskViewController: UIViewController {
         }
         
         aDetailLabel.text = "[A] = \(arrayA.description)"
-        resultLabel.text = "f = \(String(round(1000 * f)/1000))"
+        resultLabel.text = "f = \(String(f.rounded(digits: 3)))"
     }
     @IBAction func didPressShowGraph(_ sender: UIBarButtonItem) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
