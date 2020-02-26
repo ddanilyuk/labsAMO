@@ -12,9 +12,9 @@ class GraphViewController: UIViewController, UIScrollViewDelegate {
         
     @IBOutlet weak var imageView: UIImageView!
     
-    var image: UIImage? = UIImage()
-
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    var image: UIImage? = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,21 +24,9 @@ class GraphViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

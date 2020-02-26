@@ -79,7 +79,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didPressGetResult:" destination="zmH-PB-V5H" eventType="touchUpInside" id="8Er-TM-Tby"/>
-                                    <action selector="didPressResult:" destination="5hW-lX-w2N" eventType="touchUpInside" id="UKK-Nl-zsC"/>
                                     <action selector="didPressResultButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eAK-Fv-KNT"/>
                                 </connections>
                             </button>
@@ -304,7 +303,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="didPressResult:" destination="5hW-lX-w2N" eventType="touchUpInside" id="o3O-hC-xMd"/>
+                                            <action selector="didPressResultButton:" destination="5hW-lX-w2N" eventType="touchUpInside" id="o3O-hC-xMd"/>
                                             <action selector="didPressResultButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wff-Fc-OGj"/>
                                         </connections>
                                     </button>
@@ -351,7 +350,6 @@
                         <outlet property="bTextField" destination="yNv-3u-NcB" id="ecn-KM-g5g"/>
                         <outlet property="cSignButton" destination="gje-FQ-FT8" id="w0A-5v-gMI"/>
                         <outlet property="cTextField" destination="uf8-iz-BYD" id="pJg-SP-NnP"/>
-                        <outlet property="imageView" destination="TCs-Ve-XbV" id="Y19-zu-wjj"/>
                         <outlet property="kSignButton" destination="HZc-hb-tVx" id="dsh-Fu-Hfp"/>
                         <outlet property="kTextField" destination="jLv-mF-0ua" id="ngL-Xz-5Cz"/>
                         <outlet property="resultLabel" destination="ld2-wV-LJR" id="fFa-XK-Ohp"/>

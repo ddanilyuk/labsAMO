@@ -22,7 +22,6 @@ class SecondTaskViewController: UIViewController {
     @IBOutlet weak var kSignButton: UIButton!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
@@ -30,7 +29,7 @@ class SecondTaskViewController: UIViewController {
     }
     
 
-    @IBAction func didPressResult(_ sender: UIButton) {
+    @IBAction func didPressResultButton(_ sender: UIButton) {
         guard let xSign = Double((xSignButton.titleLabel?.text ?? "") + "1") else { return }
         guard let cSign = Double((cSignButton.titleLabel?.text ?? "") + "1") else { return }
         guard let bSign = Double((bSignButton.titleLabel?.text ?? "") + "1") else { return }
@@ -58,10 +57,7 @@ class SecondTaskViewController: UIViewController {
     }
     
     @IBAction func didPressShowGraph(_ sender: UIBarButtonItem) {
-        
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
-        guard let graphVC : GraphViewController = mainStoryboard.instantiateViewController(withIdentifier: GraphViewController.identifier) as? GraphViewController else { return }
+        guard let graphVC : GraphViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: GraphViewController.identifier) as? GraphViewController else { return }
         graphVC.image = UIImage(named: "lab1Graph2")
         present(graphVC, animated: true, completion: nil)
     }
@@ -89,13 +85,5 @@ class SecondTaskViewController: UIViewController {
         } else {
             buttton.setTitle("+", for: .normal)
         }
-    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showGraph2" {
-//            if let destination = segue.destination as? GraphViewController {
-//                destination.image = UIImage(named: "lab1Graph2")
-//            }
-//        }
-//    }
-    
+    }    
 }

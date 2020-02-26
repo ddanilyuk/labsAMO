@@ -18,14 +18,7 @@ class FirstTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboard()
-        
-        print(factorial(20))
-        print(factorialInt64(20))
-//        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
-////        navigationController?.navigationItem.rightBarButtonItems =
-//        self.navigationItem.rightBarButtonItem = add
         setupButton()
-
     }
     
     
@@ -35,11 +28,9 @@ class FirstTaskViewController: UIViewController {
     
     
     func calculate(a: String, c: String) -> String {
-        guard let doubleA = Double(a) else { return "Числа введені не корректно" }
-        guard let doubleC = Double(c) else { return "Числа введені не корректно" }
+        guard let doubleA = Double(a), let doubleC = Double(c) else { return "Числа введені не корректно" }
 
         if (doubleA - doubleC) < 0 {
-            
             let alert = UIAlertController(title: nil, message: "Факторіал з мінусом!", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Змінити значення", style: .default, handler: { (_) in
@@ -50,23 +41,23 @@ class FirstTaskViewController: UIViewController {
             
             return "РЕЗУЛЬТАТ"
         }
-
         
         let part1 = ((pow(doubleA, 2) - pow(doubleC, 2)) / 7)
         let part2 = (factorial(doubleA) / (factorial(doubleC) * factorial(doubleA - doubleC)))
         let result = part1 + part2
                 
-    
-        return String(round(1000 * result)/1000)
+        return String(result.rounded(digits: 3))
     }
+    
     
     @IBAction func showGraphButton(_ sender: UIBarButtonItem) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-
-        guard let graphVC : GraphViewController = mainStoryboard.instantiateViewController(withIdentifier: GraphViewController.identifier) as? GraphViewController else { return }
+        
+        guard let graphVC : GraphViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: GraphViewController.identifier) as? GraphViewController else { return }
         graphVC.image = UIImage(named: "lab1Graph1")
+        
         present(graphVC, animated: true, completion: nil)
     }
+    
     
     func factorial(_ n: Double) -> Double {
         if n == 0 {
@@ -75,18 +66,5 @@ class FirstTaskViewController: UIViewController {
         return n * factorial(n-1)
     }
     
-    func factorialInt64(_ n: Int64) -> Int64 {
-        if n == 0 {
-            return 1
-        }
-        return n * factorialInt64(n-1)
-    }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showGraph1" {
-//            if let destination = segue.destination as? GraphViewController {
-//                destination.image = UIImage(named: "lab1Graph1")
-//            }
-//        }
-//    }
 }
