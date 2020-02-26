@@ -22,7 +22,6 @@
 		5F80748223F698C600F90302 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748123F698C600F90302 /* Extensions.swift */; };
 		5F80748423F6999E00F90302 /* FirstTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748323F6999E00F90302 /* FirstTaskViewController.swift */; };
 		5F80748623F6B41700F90302 /* SecondTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748523F6B41700F90302 /* SecondTaskViewController.swift */; };
-		5F80748823F72E8500F90302 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748723F72E8500F90302 /* CustomNavigationController.swift */; };
 		5FA050E724068619007F5342 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA050E624068619007F5342 /* ImageViewController.swift */; };
 		5FE9677A2406A921000AD157 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE967792406A921000AD157 /* DetailViewController.swift */; };
 		5FE9677C2406B433000AD157 /* sortFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9677B2406B433000AD157 /* sortFunctions.swift */; };
@@ -47,7 +46,6 @@
 		5F80748123F698C600F90302 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5F80748323F6999E00F90302 /* FirstTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTaskViewController.swift; sourceTree = "<group>"; };
 		5F80748523F6B41700F90302 /* SecondTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTaskViewController.swift; sourceTree = "<group>"; };
-		5F80748723F72E8500F90302 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		5FA050E624068619007F5342 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		5FE967792406A921000AD157 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5FE9677B2406B433000AD157 /* sortFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortFunctions.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		5F363B4323F73F640058459B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				5F80748723F72E8500F90302 /* CustomNavigationController.swift */,
 				5F80748123F698C600F90302 /* Extensions.swift */,
 			);
 			path = Helpers;
@@ -142,8 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				5F80746D23F692AE00F90302 /* AppDelegate.swift */,
-				5F80747123F692AE00F90302 /* LabChooserViewController.swift */,
-				5F528C8223F567BF000235BE /* MyCell */,
+				5FE9677D2406ECCA000AD157 /* LabChooser */,
 				5F363B4123F73F1D0058459B /* Lab1 */,
 				5F363B4223F73F520058459B /* Lab2 */,
 				5F363B4323F73F640058459B /* Helpers */,
@@ -151,6 +147,15 @@
 				5F80747B23F692B000F90302 /* Info.plist */,
 			);
 			path = labsAMO;
+			sourceTree = "<group>";
+		};
+		5FE9677D2406ECCA000AD157 /* LabChooser */ = {
+			isa = PBXGroup;
+			children = (
+				5F528C8223F567BF000235BE /* MyCell */,
+				5F80747123F692AE00F90302 /* LabChooserViewController.swift */,
+			);
+			path = LabChooser;
 			sourceTree = "<group>";
 		};
 		6814CCD137675A12E3F546DB /* Frameworks */ = {
@@ -298,7 +303,6 @@
 				5F363B4723F741030058459B /* GraphViewController.swift in Sources */,
 				5FE9677C2406B433000AD157 /* sortFunctions.swift in Sources */,
 				5F80748223F698C600F90302 /* Extensions.swift in Sources */,
-				5F80748823F72E8500F90302 /* CustomNavigationController.swift in Sources */,
 				5FA050E724068619007F5342 /* ImageViewController.swift in Sources */,
 				5FF2650E240473440025F00F /* ChartViewController.swift in Sources */,
 			);

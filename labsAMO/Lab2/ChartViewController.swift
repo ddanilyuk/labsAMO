@@ -19,9 +19,16 @@ class ChartViewController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.title = "Графіки"
-
+        
+        setupChartView()
+        
+        /// Number of for loops for theoretical value
+        guard let count = nSegue else { return }
+        self.setDataCount(n: count)
+    }
+    
+    private func setupChartView() {
         chartView.delegate = self
         
         chartView.chartDescription?.enabled = false
@@ -35,8 +42,12 @@ class ChartViewController: UIViewController, ChartViewDelegate {
         let leftAxis = chartView.leftAxis
         leftAxis.removeAllLimitLines()
 
-        leftAxis.axisMaximum = 700
+        /// Maximum of y
+        leftAxis.axisMaximum = 1200
+        
+        /// Minimum of y
         leftAxis.axisMinimum = -50
+        
         leftAxis.gridLineDashLengths = [5, 5]
         leftAxis.drawLimitLinesBehindDataEnabled = true
         
@@ -45,24 +56,26 @@ class ChartViewController: UIViewController, ChartViewDelegate {
         chartView.legend.form = .line
         
         chartView.animate(xAxisDuration: 2.5)
-        guard let count = nSegue else { return }
-        self.setDataCount(n: count)
     }
 
+    
+    
     func setDataCount(n: Int) {
-
-        var values: [ChartDataEntry] = []
-        
+        // Set teoretical values
+        var valuesTeoretical: [ChartDataEntry] = []
         for i in 1..<n {
             let ii = i * 1000
             let x = Double(ii)
             let y = (Double(ii) * log(Double(ii))) / 1000
             
-            values.append(ChartDataEntry(x: x, y: y))
+            valuesTeoretical.append(ChartDataEntry(x: x, y: y))
         }
         
-        // First line
-        let set1 = LineChartDataSet(entries: values, label: "Теоретично")
+        // Getting test values
+        guard let valuesTest = valuesSegue else { return }
+        
+        // First line (teoretical)
+        let set1 = LineChartDataSet(entries: valuesTeoretical, label: "Теоретично")
         set1.drawIconsEnabled = false
         set1.setColor(.black)
         set1.setCircleColor(.black)
@@ -71,11 +84,10 @@ class ChartViewController: UIViewController, ChartViewDelegate {
         set1.drawCircleHoleEnabled = false
         set1.mode = .cubicBezier
 
-//        set1.formSize = 15
         
-        // Second line
-        guard let value2 = valuesSegue else { return }
-        let set2 = LineChartDataSet(entries: value2, label: "Практичні")
+        
+        // Second line (test)
+        let set2 = LineChartDataSet(entries: valuesTest, label: "Практично")
         set2.drawIconsEnabled = false
         set2.setColor(.red)
         set2.setCircleColor(.red)
@@ -86,11 +98,9 @@ class ChartViewController: UIViewController, ChartViewDelegate {
         set2.mode = .cubicBezier
 
         
-        
+        // Setting this lines to data
         let data = LineChartData(dataSets: [set1, set2])
-        
         chartView.data = data
     }
     
-
 }

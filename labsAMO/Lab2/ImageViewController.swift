@@ -11,7 +11,6 @@ import Charts
 
 class ImageViewController: UIViewController {
     
-//    var valuesSegue: [ChartDataEntry]?
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var activityView: UIView!
@@ -29,20 +28,29 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
+        setupActivityIndicator()
+        
+        setupSlider()
+    }
+    
+    
+    private func setupSlider() {
+        slider.maximumValue = 90
+        slider.minimumValue = 5
+    }
+    
+    
+    private func setupActivityIndicator() {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
+        activityIndicator.color = .white
+        
         activityView.isHidden = true
         activityView.layer.cornerRadius = 18
         activityView.backgroundColor = UIColor.darkText
-        activityIndicator.color = .white
-//        self.view.bringSubviewToFront(activityIndicator)
-        
-        slider.maximumValue = 60
-        slider.minimumValue = 5
-        
-
-        // Do any additional setup after loading the view.
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         activityIndicator.stopAnimating()
         activityIndicator.isHidden = true
@@ -50,19 +58,20 @@ class ImageViewController: UIViewController {
         chartButton.isEnabled = true
     }
     
+    
     @IBAction func didPressShowChart(_ sender: UIButton) {
+        // Stop activity indicator
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
         activityView.isHidden = false
         self.view.bringSubviewToFront(activityView)
-//        self.view.bringSubviewToFront(activityIndicator)
         
+        // Getting test result and showing charts
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1 , execute: {
           self.showChart()
-
         })
-        
     }
+    
     
     @IBAction func sliderValueChanged(_ sender: UISlider) {
         sliderValue = Int(sender.value)
@@ -71,19 +80,17 @@ class ImageViewController: UIViewController {
     
     
     func showChart() {
-        guard let vc = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: ChartViewController.identifier) as? ChartViewController else {
-            return
+        guard let chartVC = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: ChartViewController.identifier) as? ChartViewController else { return }
+        
+        guard let firstTaskLab2VC = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: FirstTask2LabViewController.identifier) as? FirstTask2LabViewController else { return }
+        
+        DispatchQueue.main.async {
+            
+            chartVC.valuesSegue = firstTaskLab2VC.getTestValues(count: self.sliderValue)
+            chartVC.nSegue = self.sliderValue
+            
+            self.navigationController?.pushViewController(chartVC, animated: true)
         }
-        
-        guard let task1 = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: FirstTask2LabViewController.identifier) as? FirstTask2LabViewController else {
-            return
-        }
-        
-        vc.valuesSegue = task1.getTeorValues(count: sliderValue)
-        vc.nSegue = sliderValue
-        
-        
-        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

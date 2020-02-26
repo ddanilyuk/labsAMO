@@ -8,13 +8,12 @@
 
 import UIKit
 
+
 /// QUICKSORT1
 func quicksort<T: Comparable>(_ a: [T]) -> [T] {
     guard a.count > 1 else {
         return a
     }
-    
-
     let pivot = a[a.count/2]
     let less = a.filter { $0 < pivot }
     let equal = a.filter { $0 == pivot }
@@ -45,6 +44,7 @@ func quickSort2(_ input: [Double], startIndex:Int, endIndex: Int)-> [Double] {
     return inputArray
 }
 
+
 /// BUBLE
 func buble(array: [Double]) -> [Double]{
     var arrayReturn = array
@@ -59,6 +59,7 @@ func buble(array: [Double]) -> [Double]{
     }
     return arrayReturn
 }
+
 
 /// HOARE
 func partitionHoare(_ a: inout [Double], low: Int, high: Int) -> Int {
