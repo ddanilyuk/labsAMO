@@ -53,14 +53,21 @@ class FirstTask2LabViewController: UIViewController {
             return
         }
         
-//        vc.valuesSegue = getTeorValues()
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func didPressGetPresetArrays(_ sender: UIButton) {
+        let picker = UIPickerView()
+        picker.dataSource = self
+        picker.delegate = self
+        
+        mainTextField.inputView = picker
+        mainTextField.becomeFirstResponder()
+    }
+    
+    
     @IBAction func didPressGetResult(_ sender: UIButton) {
-        let startDoArray = Date()
-
         var arrayA: [Double] = []
         
         if segmentControl?.selectedSegmentIndex == 0 {
@@ -78,15 +85,14 @@ class FirstTask2LabViewController: UIViewController {
             }
         }
         
-        let endDoArray = Date()
-        let timeIntervalDoArray: Double = endDoArray.timeIntervalSince(startDoArray)
-        print(timeIntervalDoArray)
-
         let start = Date()
-        sortedTextLabel.text = "Відстортований [A] = \(quicksort(arrayA).description)"
-        detailTextLabel.text = "Початковий [A] = \(arrayA.description)"
+        quickSort2(arrayA, startIndex: 0, endIndex: arrayA.count - 1)
         let end = Date()   // <<<<<<<<<<   end time
         let timeInterval: Double = end.timeIntervalSince(start)
+
+        
+        sortedTextLabel.text = "Відстортований [A] = \(arrayA.description)"
+        detailTextLabel.text = "Початковий [A] = \(arrayA.description)"
 
         timeTextLabel.text = "Елементів: \(arrayA.count) Час: \(timeInterval.rounded(digits: 8))"
         
@@ -94,7 +100,7 @@ class FirstTask2LabViewController: UIViewController {
 //        let quicksort_timed = timeit(closure: quicksort)
 //        let res = quicksort_timed(arrayA)
 //        sortedTextLabel.text = "[A] = \(res.0.description)"
-//        detailTextLabel.text = "[A] = my\(arrayA.description)"
+//        detailTextLabel.text = "[A] = \(arrayA.description)"
 //        timeTextLabel.text = "Елементів: \(arrayA.count) Час: \(res.1.rounded(digits: 4))"
 //        print("**********************")
 //        print("My \(timeInterval)")
@@ -102,6 +108,24 @@ class FirstTask2LabViewController: UIViewController {
 //        print("Difference between my and Danil \(timeInterval - (res.1))")
 
 
+    }
+    @IBAction func didShowStartArray(_ sender: UIButton) {
+        let text = detailTextLabel.text
+        guard let vc = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
+            return
+        }
+        vc.text = text
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    @IBAction func didShowEndArray(_ sender: UIButton) {
+        let text = sortedTextLabel.text
+        guard let vc = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
+            return
+        }
+        vc.text = text
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func getTeorValues(count: Int) -> [ChartDataEntry] {
@@ -138,7 +162,7 @@ class FirstTask2LabViewController: UIViewController {
             let startDoArray = Date()
 
             var arrayA: [Double] = []
-            var sorterd: [Double] = []
+            var sorted: [Double] = []
             
             for _ in 0..<nn {
                 arrayA.append((Double.random(in: 0..<100).rounded(digits: 2)))
@@ -148,7 +172,9 @@ class FirstTask2LabViewController: UIViewController {
             let timeIntervalDoArray: Double = endDoArray.timeIntervalSince(startDoArray)
 
             let start = Date()
-            sorterd = quicksort(arrayA)
+//            sorted = quickSort2(arrayA, startIndex: 0, endIndex: arrayA.count - 1)
+            sorted = quicksort(arrayA)
+
 //            sorterd = buble(array: arrayA)
             let end = Date()
             
@@ -232,33 +258,27 @@ class FirstTask2LabViewController: UIViewController {
         return wrap
     }
     
-    func quicksort<T: Comparable>(_ a: [T]) -> [T] {
-        guard a.count > 1 else {
-            self.end = DispatchTime.now()
-            return a
-        }
-        
+    
+}
 
-        let pivot = a[a.count/2]
-        let less = a.filter { $0 < pivot }
-        let equal = a.filter { $0 == pivot }
-        let greater = a.filter { $0 > pivot }
-
-        return quicksort(less) + equal + quicksort(greater)
+extension FirstTask2LabViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    
-    func buble(array: [Double]) -> [Double]{
-        var arrayReturn = array
-        for i in 0..<arrayReturn.count {
-          for j in 1..<arrayReturn.count - i {
-            if arrayReturn[j] < arrayReturn[j-1] {
-              let tmp = arrayReturn[j-1]
-              arrayReturn[j-1] = arrayReturn[j]
-              arrayReturn[j] = tmp
-            }
-          }
-        }
-        return arrayReturn
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
     }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let array = "1, 4, 6, 2, 12, 6, 8, 12, 1, 4, 6, 2, 12, 6, 8, 12, 1, 4, 6, 2, 12, 6, 8, 12"
+        return array
+    }
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 50
+    }
+    
+
+    
+    
 }

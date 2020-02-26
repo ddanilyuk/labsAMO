@@ -69,6 +69,8 @@ class ChartViewController: UIViewController, ChartViewDelegate {
         set1.lineWidth = 1
         set1.circleRadius = 0
         set1.drawCircleHoleEnabled = false
+        set1.mode = .cubicBezier
+
 //        set1.formSize = 15
         
         // Second line
@@ -81,6 +83,8 @@ class ChartViewController: UIViewController, ChartViewDelegate {
         set2.circleRadius = 0
         set2.drawCircleHoleEnabled = false
         set2.formSize = 15
+        set2.mode = .cubicBezier
+
         
         
         let data = LineChartData(dataSets: [set1, set2])
