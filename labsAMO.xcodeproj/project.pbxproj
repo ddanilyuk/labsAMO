@@ -23,6 +23,7 @@
 		5F80748423F6999E00F90302 /* FirstTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748323F6999E00F90302 /* FirstTaskViewController.swift */; };
 		5F80748623F6B41700F90302 /* SecondTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748523F6B41700F90302 /* SecondTaskViewController.swift */; };
 		5F80748823F72E8500F90302 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748723F72E8500F90302 /* CustomNavigationController.swift */; };
+		5FA050E724068619007F5342 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA050E624068619007F5342 /* ImageViewController.swift */; };
 		5FF2650E240473440025F00F /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2650D240473440025F00F /* ChartViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		5F80748323F6999E00F90302 /* FirstTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTaskViewController.swift; sourceTree = "<group>"; };
 		5F80748523F6B41700F90302 /* SecondTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTaskViewController.swift; sourceTree = "<group>"; };
 		5F80748723F72E8500F90302 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		5FA050E624068619007F5342 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		5FF2650D240473440025F00F /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		7F6FFC2362F9416CB0EF9330 /* Pods-labsAMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-labsAMO.release.xcconfig"; path = "Target Support Files/Pods-labsAMO/Pods-labsAMO.release.xcconfig"; sourceTree = "<group>"; };
 		D480D46C2D5FDB3D4C9855CF /* Pods_labsAMO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_labsAMO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 			children = (
 				5F363B3F23F73AB90058459B /* Lab2.storyboard */,
 				5F363B4A23F751EB0058459B /* FirstTask2LabViewController.swift */,
+				5FA050E624068619007F5342 /* ImageViewController.swift */,
 				5FF2650D240473440025F00F /* ChartViewController.swift */,
 			);
 			path = Lab2;
@@ -288,6 +291,7 @@
 				5F363B4723F741030058459B /* GraphViewController.swift in Sources */,
 				5F80748223F698C600F90302 /* Extensions.swift in Sources */,
 				5F80748823F72E8500F90302 /* CustomNavigationController.swift in Sources */,
+				5FA050E724068619007F5342 /* ImageViewController.swift in Sources */,
 				5FF2650E240473440025F00F /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

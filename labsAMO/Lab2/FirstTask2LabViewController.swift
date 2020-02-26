@@ -49,11 +49,11 @@ class FirstTask2LabViewController: UIViewController {
         
     }
     @IBAction func didPressShowCrats(_ sender: UIButton) {
-        guard let vc = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: ChartViewController.identifier) as? ChartViewController else {
+        guard let vc = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: ImageViewController.identifier) as? ImageViewController else {
             return
         }
         
-        vc.valuesSegue = getTeorValues()
+//        vc.valuesSegue = getTeorValues()
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -104,7 +104,7 @@ class FirstTask2LabViewController: UIViewController {
 
     }
     
-    func getTeorValues() -> [ChartDataEntry] {
+    func getTeorValues(count: Int) -> [ChartDataEntry] {
         var values: [ChartDataEntry] = []
 //        var result: [(n: Double, time: Double)] = []
 //        for n in 1..<1000 {
@@ -133,7 +133,7 @@ class FirstTask2LabViewController: UIViewController {
 //            print(time)
 //            values.append(charData)
 //        }
-        for n in 1..<6 {
+        for n in 1..<count {
             let nn = n * 1000
             let startDoArray = Date()
 
@@ -148,8 +148,8 @@ class FirstTask2LabViewController: UIViewController {
             let timeIntervalDoArray: Double = endDoArray.timeIntervalSince(startDoArray)
 
             let start = Date()
-//            sorterd = quicksort(arrayA)
-            sorterd = buble(array: arrayA)
+            sorterd = quicksort(arrayA)
+//            sorterd = buble(array: arrayA)
             let end = Date()
             
             let timeInterval: Double = end.timeIntervalSince(start)
