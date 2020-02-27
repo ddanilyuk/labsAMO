@@ -27,7 +27,6 @@ class ThirdTaskViewController: UIViewController {
     
     
     @IBAction func didPressGetResult(_ sender: UIButton) {
-        
         let n = Int(nTextField.text ?? "") ?? 0
         
         let splited = (aTextField.text ?? "").split(separator: ",")
@@ -48,10 +47,8 @@ class ThirdTaskViewController: UIViewController {
             
             alert.addAction(UIAlertAction(title: "Змінити значення", style: .default, handler: { (_) in
             }))
-            
             self.present(alert, animated: true, completion: {
             })
-    
             aDetailLabel.text = "[A] = \(arrayA.description)"
             return
         }
@@ -75,5 +72,8 @@ class ThirdTaskViewController: UIViewController {
         graphVC.image = UIImage(named: "lab1Graph3")
         present(graphVC, animated: true, completion: nil)
     }
-
+    
+    
+    
+    
 }
