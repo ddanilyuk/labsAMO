@@ -571,6 +571,22 @@
                                     <action selector="didPressResultButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8lV-Lo-reZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aW1-kF-PQR">
+                                <rect key="frame" x="308" y="398" width="58" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Зчитати"/>
+                                <connections>
+                                    <action selector="didPressFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FO2-zS-j4U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jl6-bY-tHk">
+                                <rect key="frame" x="15" y="398" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Записати"/>
+                                <connections>
+                                    <segue destination="HEm-3a-azz" kind="show" id="Klp-6g-w8V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -609,6 +625,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-508" y="-752"/>
+        </scene>
+        <!--Write View Controller-->
+        <scene sceneID="LfH-3w-6mO">
+            <objects>
+                <viewController storyboardIdentifier="WriteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HEm-3a-azz" customClass="WriteViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n32-J7-WMq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="huV-hh-f1S">
+                                <rect key="frame" x="0.0" y="122" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pfX-8z-12j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVu-lQ-S4X">
+                                <rect key="frame" x="153" y="205" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Записати"/>
+                                <connections>
+                                    <action selector="didPressWrite:" destination="HEm-3a-azz" eventType="touchUpInside" id="8hV-U8-vmZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="huV-hh-f1S" firstAttribute="leading" secondItem="cFy-mi-RiO" secondAttribute="leading" id="3MQ-T3-zJS"/>
+                            <constraint firstItem="cFy-mi-RiO" firstAttribute="trailing" secondItem="huV-hh-f1S" secondAttribute="trailing" id="7fx-LD-GMT"/>
+                            <constraint firstItem="huV-hh-f1S" firstAttribute="top" secondItem="cFy-mi-RiO" secondAttribute="top" constant="34" id="rKd-K4-Nfq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cFy-mi-RiO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="raA-1P-4q5"/>
+                    <connections>
+                        <outlet property="textField" destination="huV-hh-f1S" id="n8q-5f-MjE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hDo-dK-5BX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="487" y="-752"/>
         </scene>
         <!--Завдання 2-->
         <scene sceneID="xTz-cr-Qui">

@@ -26,6 +26,53 @@ class FirstTaskViewController: UIViewController {
         resultLabel.text = "Y1 = \(calculate(a: aTextField.text ?? "", c: cTextField.text ?? ""))"
     }
     
+    @IBAction func didPressFile(_ sender: UIButton) {
+        var array: [String] = []
+
+        do {
+            let text2 = try makeWritableCopy(named: "main.txt", ofResourceFile: "main.txt")
+            let array = text2.components(separatedBy: ", ")
+
+            aTextField.text = array[0].trimmingCharacters(in: .whitespacesAndNewlines)
+            cTextField.text = array[1].trimmingCharacters(in: .whitespacesAndNewlines)
+        } catch {
+            
+        }
+        
+    }
+    
+    func makeWritableCopy(named destFileName: String, ofResourceFile originalFileName: String) throws -> String {
+        // Get Documents directory in app bundle
+        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last else {
+            fatalError("No document directory found in application bundle.")
+        }
+
+        // Get URL for dest file (in Documents directory)
+        let writableFileURL = documentsDirectory.appendingPathComponent(destFileName)
+
+        // If dest file doesn’t exist yet
+        if (try? writableFileURL.checkResourceIsReachable()) == nil {
+            // Get original (unwritable) file’s URL
+            guard let originalFileURL = Bundle.main.url(forResource: originalFileName, withExtension: nil) else {
+                fatalError("Cannot find original file “\(originalFileName)” in application bundle’s resources.")
+            }
+
+            // Get original file’s contents
+            let originalContents = try Data(contentsOf: originalFileURL)
+
+            // Write original file’s contents to dest file
+            try originalContents.write(to: writableFileURL, options: .atomic)
+            print("Made a writable copy of file “\(originalFileName)” in “\(documentsDirectory)\\\(destFileName)”.")
+
+        } else { // Dest file already exists
+            // Print dest file contents
+            return try String(contentsOf: writableFileURL, encoding: String.Encoding.utf8)
+//            print("File “\(destFileName)” already exists in “\(documentsDirectory)”.\nContents:\n\(contents)")
+        }
+        
+        return ""
+
+    }
     
     func calculate(a: String, c: String) -> String {
         guard let doubleA = Double(a), let doubleC = Double(c) else { return "Числа введені не корректно" }
