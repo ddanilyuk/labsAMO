@@ -62,7 +62,7 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-        if indexPath.row >= 2 {
+        if indexPath.row >= 3 {
             tableView.deselectRow(at: indexPath, animated: true)
             return
         }
@@ -70,9 +70,11 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
         // All lab storyboards
         let lab1Storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let lab2Storyboard = UIStoryboard(name: "Lab2", bundle: Bundle.main)
+        let lab3Storyboard = UIStoryboard(name: "Lab3", bundle: Bundle.main)
+
         
         // Array with all storyboards
-        let allLabsStoryoards = [lab1Storyboard, lab2Storyboard]
+        let allLabsStoryoards = [lab1Storyboard, lab2Storyboard, lab3Storyboard]
         
         // Choosen storyboard depend of indexPath.row
         let choosenLabStoryboard = allLabsStoryoards[indexPath.row]

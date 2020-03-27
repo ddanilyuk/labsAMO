@@ -12,6 +12,9 @@
 		5F363B4523F740EC0058459B /* ThirdTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4423F740EC0058459B /* ThirdTaskViewController.swift */; };
 		5F363B4723F741030058459B /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4623F741030058459B /* GraphViewController.swift */; };
 		5F363B4B23F751EB0058459B /* FirstTask2LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F363B4A23F751EB0058459B /* FirstTask2LabViewController.swift */; };
+		5F5151C32421527500244FBD /* Lab3Task1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5151C22421527500244FBD /* Lab3Task1ViewController.swift */; };
+		5F5151C5242152A700244FBD /* Lab3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5151C4242152A700244FBD /* Lab3.storyboard */; };
+		5F5151C7242161C100244FBD /* Lab3ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5151C6242161C100244FBD /* Lab3ChartViewController.swift */; };
 		5F528C8523F567E8000235BE /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F528C8323F567E8000235BE /* MyTableViewCell.swift */; };
 		5F528C8623F567E8000235BE /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F528C8423F567E8000235BE /* MyTableViewCell.xib */; };
 		5F80746E23F692AE00F90302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80746D23F692AE00F90302 /* AppDelegate.swift */; };
@@ -22,6 +25,7 @@
 		5F80748223F698C600F90302 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748123F698C600F90302 /* Extensions.swift */; };
 		5F80748423F6999E00F90302 /* FirstTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748323F6999E00F90302 /* FirstTaskViewController.swift */; };
 		5F80748623F6B41700F90302 /* SecondTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80748523F6B41700F90302 /* SecondTaskViewController.swift */; };
+		5F8EF106242E2F7C00E74220 /* BaloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8EF105242E2F7C00E74220 /* BaloonMarker.swift */; };
 		5FA050E724068619007F5342 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA050E624068619007F5342 /* ImageViewController.swift */; };
 		5FE9677A2406A921000AD157 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE967792406A921000AD157 /* DetailViewController.swift */; };
 		5FE9677C2406B433000AD157 /* sortFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9677B2406B433000AD157 /* sortFunctions.swift */; };
@@ -36,6 +40,9 @@
 		5F363B4423F740EC0058459B /* ThirdTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTaskViewController.swift; sourceTree = "<group>"; };
 		5F363B4623F741030058459B /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		5F363B4A23F751EB0058459B /* FirstTask2LabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTask2LabViewController.swift; sourceTree = "<group>"; };
+		5F5151C22421527500244FBD /* Lab3Task1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab3Task1ViewController.swift; sourceTree = "<group>"; };
+		5F5151C4242152A700244FBD /* Lab3.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lab3.storyboard; sourceTree = "<group>"; };
+		5F5151C6242161C100244FBD /* Lab3ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab3ChartViewController.swift; sourceTree = "<group>"; };
 		5F528C8323F567E8000235BE /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		5F528C8423F567E8000235BE /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 		5F80746A23F692AE00F90302 /* labsAMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = labsAMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +55,7 @@
 		5F80748123F698C600F90302 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5F80748323F6999E00F90302 /* FirstTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTaskViewController.swift; sourceTree = "<group>"; };
 		5F80748523F6B41700F90302 /* SecondTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTaskViewController.swift; sourceTree = "<group>"; };
+		5F8EF105242E2F7C00E74220 /* BaloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaloonMarker.swift; sourceTree = "<group>"; };
 		5FA050E624068619007F5342 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		5FE967792406A921000AD157 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5FE9677B2406B433000AD157 /* sortFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortFunctions.swift; sourceTree = "<group>"; };
@@ -104,6 +112,17 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		5F5151C12421524F00244FBD /* Lab3 */ = {
+			isa = PBXGroup;
+			children = (
+				5F5151C4242152A700244FBD /* Lab3.storyboard */,
+				5F5151C22421527500244FBD /* Lab3Task1ViewController.swift */,
+				5F5151C6242161C100244FBD /* Lab3ChartViewController.swift */,
+				5F8EF105242E2F7C00E74220 /* BaloonMarker.swift */,
+			);
+			path = Lab3;
+			sourceTree = "<group>";
+		};
 		5F528C8223F567BF000235BE /* MyCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +167,7 @@
 				5FE9677D2406ECCA000AD157 /* LabChooser */,
 				5F363B4123F73F1D0058459B /* Lab1 */,
 				5F363B4223F73F520058459B /* Lab2 */,
+				5F5151C12421524F00244FBD /* Lab3 */,
 				5F363B4323F73F640058459B /* Helpers */,
 				5F528C8723F56A92000235BE /* Resoursces */,
 				5F80747B23F692B000F90302 /* Info.plist */,
@@ -246,6 +266,7 @@
 				5F80747A23F692B000F90302 /* LaunchScreen.storyboard in Resources */,
 				5F80747723F692B000F90302 /* Assets.xcassets in Resources */,
 				5F80747523F692AE00F90302 /* Main.storyboard in Resources */,
+				5F5151C5242152A700244FBD /* Lab3.storyboard in Resources */,
 				5F363B4023F73AB90058459B /* Lab2.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,10 +326,13 @@
 				5F80748623F6B41700F90302 /* SecondTaskViewController.swift in Sources */,
 				5F528C8523F567E8000235BE /* MyTableViewCell.swift in Sources */,
 				5F363B4523F740EC0058459B /* ThirdTaskViewController.swift in Sources */,
+				5F5151C32421527500244FBD /* Lab3Task1ViewController.swift in Sources */,
 				5FE967812407BD1C000AD157 /* WriteViewController.swift in Sources */,
 				5F80748423F6999E00F90302 /* FirstTaskViewController.swift in Sources */,
 				5F363B4B23F751EB0058459B /* FirstTask2LabViewController.swift in Sources */,
+				5F8EF106242E2F7C00E74220 /* BaloonMarker.swift in Sources */,
 				5F363B4723F741030058459B /* GraphViewController.swift in Sources */,
+				5F5151C7242161C100244FBD /* Lab3ChartViewController.swift in Sources */,
 				5FE9677C2406B433000AD157 /* sortFunctions.swift in Sources */,
 				5F80748223F698C600F90302 /* Extensions.swift in Sources */,
 				5FA050E724068619007F5342 /* ImageViewController.swift in Sources */,
