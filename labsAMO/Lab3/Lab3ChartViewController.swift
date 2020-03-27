@@ -251,10 +251,7 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
             var p2: Double = 1
             
             for i in 0..<arrayX.count {
-                if i == j {
-                    p1 = p1 * 1
-                    p2 = p2 * 1
-                } else {
+                if i != j {
                     p1 = p1 * (t - arrayX[i])
                     p2 = p2 * (arrayX[j] - arrayX[i])
                 }
