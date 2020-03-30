@@ -12,18 +12,48 @@ import Charts
 class Lab3ChartViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet var chartView: LineChartView!
-
     @IBOutlet weak var chartViewErrors: LineChartView!
+    
+    @IBOutlet weak var segmentControll: UISegmentedControl!
+    
+    
+    var allPointsData: (teoretical: (x: [Double], y: [Double]), test: (x: [Double], y: [Double]), error1: (x: [Double], y: [Double]), error2: (x: [Double], y: [Double]))?
+    
+    var aSegue: Double = 0.0
+    var bSegue: Double = 2.0
+    var countSegue: Int = 10
+    var formula: PossibleFormuls = .myVariant
+
+    var  isError2: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Графіки"
         
+        allPointsData = getData(formula: formula, a: aSegue, b: bSegue, count: countSegue)
+
         setupChartView()
         setupErrorsChartView()
         setData()
         setErrorData()
+    }
+    
+    
+    @IBAction func didChangeErrorType(_ sender: UISegmentedControl) {
+        
+        switch segmentControll.selectedSegmentIndex {
+        case 0:
+            isError2 = false
+            setErrorData()
+        case 1:
+            isError2 = true
+            setErrorData()
+
+        default:
+            break
+        }
     }
     
     
@@ -44,17 +74,17 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
         bottomAxis.gridLineDashLengths = [10, 10]
         bottomAxis.gridLineDashPhase = 0
         
-        // Data to set maximum and minimum of X and Y
-        let pointsData = getData()
-        // Minimum of y
-        leftAxis.axisMinimum = pointsData.teoretical.y.min() ?? 0.0
-        // Maximum of y
-        leftAxis.axisMaximum = (pointsData.teoretical.y.max() ?? 0.0) + 0.1
-                
-        // Minimum of x
-        bottomAxis.axisMinimum = pointsData.test.x.min() ?? 0.0
-        // Maximum of x
-        bottomAxis.axisMaximum = (pointsData.test.x.max() ?? 0.0) + 0.1
+        /**
+         //Minimum of y
+         leftAxis.axisMinimum = (allPointsData?.teoretical.y.min() ?? 0.0) * (6/5)
+         // Maximum of y
+         leftAxis.axisMaximum = (allPointsData?.teoretical.y.max() ?? 0.0) * (6/5)
+
+         // Minimum of x
+         bottomAxis.axisMinimum = (allPointsData?.test.x.min() ?? 0.0) * (6/5)
+         // Maximum of x
+         bottomAxis.axisMaximum = (allPointsData?.test.x.max() ?? 0.0) * (6/5)
+         */
         
         // Create marker
         let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
@@ -66,7 +96,8 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
         //
         
         chartView.rightAxis.enabled = false
-        chartView.legend.form = .line
+        chartView.legend.form = .square
+        chartView.legend.font = NSUIFont(name: "Helvetica", size: 15) ?? NSUIFont()
         chartView.animate(xAxisDuration: 2)
         chartView.marker = marker
     }
@@ -89,17 +120,17 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
         bottomAxis.gridLineDashLengths = [10, 10]
         bottomAxis.gridLineDashPhase = 0
         
-        // Data to set maximum and minimum of X and Y
-        let pointsData = getData()
-        // Minimum of y
-        leftAxis.axisMinimum = -1 * abs((pointsData.error.y.min() ?? 0.0) * (6 / 5))
-        // Maximum of y
-        leftAxis.axisMaximum = 1 * abs((pointsData.error.y.max() ?? 0.0) * (6 / 5))
-                
-        // Minimum of x
-        bottomAxis.axisMinimum = (pointsData.error.x.min() ?? 0.0)
-        // Maximum of x
-        bottomAxis.axisMaximum = (pointsData.error.x.max() ?? 0.0) + 0.1
+        /**
+         //Minimum of y
+         leftAxis.axisMinimum = -1 * abs((allPointsData?.error2.y.min() ?? 0.0) * (6 / 5))
+         // Maximum of y
+         leftAxis.axisMaximum = 1 * abs((allPointsData?.error2.y.max() ?? 0.0) * (6 / 5))
+                 
+         // Minimum of x
+         bottomAxis.axisMinimum = (allPointsData?.error2.x.min() ?? 0.0)
+         // Maximum of x
+         bottomAxis.axisMaximum = (allPointsData?.error2.x.max() ?? 0.0) + 0.1
+         */
         
         // Create marker
         let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
@@ -111,74 +142,32 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
         //
         
         chartViewErrors.rightAxis.enabled = false
-        chartViewErrors.legend.form = .line
+        chartViewErrors.legend.form = .square
+        chartViewErrors.legend.font = NSUIFont(name: "Helvetica", size: 15) ?? NSUIFont()
+
         chartViewErrors.animate(xAxisDuration: 2)
         chartViewErrors.marker = marker
     }
     
     
-    private func getFormulaData(accuracy: Int = 10, a: Double = 0, b: Double = 5) -> (x: [Double], y: [Double]) {
-        let h: Double = (b - a) / Double(accuracy)
-       
-        var x: [Double] = []
-        var y: [Double] = []
-
-        for i in 0...accuracy {
-            x.append(a + (h * Double(i)))
-//            y.append((1 / (0.5 + pow(x[i], 2))))
-            y.append(exp(sin(x[i])))
-        }
-        
-        return (x, y)
-    }
-
-    
-    private func getData() -> (teoretical: (x: [Double], y: [Double]),
-                               test: (x: [Double], y: [Double]),
-                               error: (x: [Double], y: [Double])) {
-            
-        let (xWithTenPoints, yWithTenPoints) = getFormulaData(accuracy: 10)
-        
-        let (xTeoretical, yTeoretical) = getFormulaData(accuracy: 1000)
-        
-        var yTestLagrange: [Double] = []
-        for i in xTeoretical {
-            yTestLagrange.append(lagrang(arrayX: xWithTenPoints, arrayY: yWithTenPoints, t: i).rounded(digits: 5))
-        }
-        
-        var yErrors: [Double] = []
-        for i in 0..<yTestLagrange.count {
-            yErrors.append((yTeoretical[i] - yTestLagrange[i]).rounded(digits: 8))
-        }
-//        print(yErrors)
-                                
-        let teoretical: (x: [Double], y: [Double]) = (xTeoretical, yTeoretical)
-        let test: (x: [Double], y: [Double]) = (xTeoretical, yTestLagrange)
-        let error: (x: [Double], y: [Double]) = (xTeoretical, yErrors)
-        
-        return (teoretical, test, error)
-    }
-    
-    
     private func setData() {
-        let pointsData = getData()
-        
         var teoreticalValues: [ChartDataEntry] = []
         var testValues: [ChartDataEntry] = []
         
-        for i in 0..<pointsData.teoretical.x.count {
-            teoreticalValues.append(ChartDataEntry(x: pointsData.teoretical.x[i], y: pointsData.teoretical.y[i]))
+        guard let allPointsData = allPointsData else { return }
+        for i in 0..<allPointsData.teoretical.x.count {
+            teoreticalValues.append(ChartDataEntry(x: allPointsData.teoretical.x[i], y: allPointsData.teoretical.y[i]))
         }
         
-        for i in 0..<pointsData.test.x.count {
-            testValues.append(ChartDataEntry(x: pointsData.test.x[i], y: pointsData.test.y[i]))
+        for i in 0..<allPointsData.test.x.count {
+            testValues.append(ChartDataEntry(x: allPointsData.test.x[i], y: allPointsData.test.y[i]))
         }
 
-        let teoreticalLine = LineChartDataSet(entries: teoreticalValues, label: "Теоретично")
+        let teoreticalLine = LineChartDataSet(entries: teoreticalValues, label: "Теоретичні")
         
         teoreticalLine.setColor(.blue)
         teoreticalLine.setCircleColor(.gray)
-        teoreticalLine.lineWidth = 3
+        teoreticalLine.lineWidth = 1.5
         teoreticalLine.circleRadius = 0
         teoreticalLine.valueFont = .systemFont(ofSize: 10)
         teoreticalLine.formLineDashLengths = [5, 5]
@@ -190,11 +179,11 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
         teoreticalLine.drawCircleHoleEnabled = false
 
         
-        let testLine = LineChartDataSet(entries: testValues, label: "Практично")
+        let testLine = LineChartDataSet(entries: testValues, label: "Інтерпольовані")
     
         testLine.setColor(.black)
         testLine.setCircleColor(.gray)
-        testLine.lineWidth = 3
+        testLine.lineWidth = 1.5
         testLine.circleRadius = 3
         testLine.valueFont = .systemFont(ofSize: 10)
         testLine.formLineDashLengths = [5, 5]
@@ -213,23 +202,39 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
     
     
     func setErrorData() {
-        let pointsData = getData()
-                
-        var errorValues: [ChartDataEntry] = []
-        for i in 0..<pointsData.error.x.count {
-            errorValues.append(ChartDataEntry(x: pointsData.error.x[i], y: pointsData.error.y[i]))
-        }
+        guard let allPointsData = allPointsData else { return }
         
-        let errorLine = LineChartDataSet(entries: errorValues, label: "Помилка")
+        var errorValues: [ChartDataEntry] = []
+        
+        if !isError2 {
+            for i in 0..<allPointsData.error2.x.count {
+                let yPoint = -1 * log10(abs(allPointsData.error2.y[i]))
+                if yPoint.isFinite && !yPoint.isNaN {
+                    print(yPoint)
+
+                    errorValues.append(ChartDataEntry(x: allPointsData.error2.x[i], y: yPoint))
+                }
+            }
+        } else {
+            for i in 0..<allPointsData.error1.x.count {
+                let yPoint = allPointsData.error1.y[i]
+                if yPoint.isFinite && !yPoint.isNaN {
+                    errorValues.append(ChartDataEntry(x: allPointsData.error1.x[i], y: yPoint))
+                }
+            }
+        }
+        let errorLineLabel = isError2 ? "Похибка інтерполяції" : "Оцінка похибки (Δn)"
+        
+        let errorLine = LineChartDataSet(entries: errorValues, label: errorLineLabel)
     
         errorLine.setColor(.red)
         errorLine.setCircleColor(.gray)
-        errorLine.lineWidth = 3
+        errorLine.lineWidth = 1.5
         errorLine.circleRadius = 0
         errorLine.valueFont = .systemFont(ofSize: 10)
         errorLine.formLineDashLengths = [5, 5]
         errorLine.formLineWidth = 6
-        errorLine.mode = .cubicBezier
+        errorLine.mode = .linear
         
         errorLine.drawCirclesEnabled = false
         errorLine.drawValuesEnabled = false
@@ -241,41 +246,4 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
         let dataChart = LineChartData(dataSets: [errorLine])
         chartViewErrors.data = dataChart
     }
-    
-    
-    func lagrang(arrayX: [Double], arrayY: [Double], t: Double) -> Double {
-        var z: Double = 0
-        
-        for j in 0..<arrayY.count {
-            var p1: Double = 1
-            var p2: Double = 1
-            
-            for i in 0..<arrayX.count {
-                if i != j {
-                    p1 = p1 * (t - arrayX[i])
-                    p2 = p2 * (arrayX[j] - arrayX[i])
-                }
-            }
-            z = z + (arrayY[j] * (p1 / p2))
-        }
-            
-        return z
-    }
-    
-//    private func aitken(arrayX: [Double], arrayY: [Double]) {
-//        let n = arrayX.count
-//
-//    }
-//    public static double[] aitken(double[] x, double[] y) {
-//      int n = x.length;
-//      double[] dividedDifferences = y.clone();
-//      for(int i=1; i<n; i++) {
-//        for(int j=n-1; j>0; j--) {
-//          if(j-i>=0) {
-//            dividedDifferences[j] = (dividedDifferences[j]-dividedDifferences[j-1])/(x[j]-x[j-i]);
-//          }
-//        }
-//      }
-//      return dividedDifferences;
-//    }
 }
