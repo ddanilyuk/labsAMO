@@ -8,8 +8,18 @@
 
 import UIKit
 
+
 extension UIViewController {
     
+    /**
+     Function which give you exact values from formula
+     
+     - Parameter formula : Enum with possible formuls
+     - Parameter a : First value for in the segment in which the graph will be built
+     - Parameter b : Second value for in the segment in which the graph will be built
+     - Parameter count : Count  of points
+
+     */
     func getFormulaData(formula: PossibleFormuls, a: Double, b: Double, count: Int = 10) -> (x: [Double], y: [Double]) {
         let h: Double = (b - a) / Double(count)
        
@@ -31,6 +41,14 @@ extension UIViewController {
     }
     
     
+    /**
+     Lagrange algorithm
+     
+     - Parameter arrayX : Array of exact X points
+     - Parameter arrayY: Array of exact Y points
+     - Parameter t : x value of point which you want to find
+
+     */
     func lagrang(arrayX: [Double], arrayY: [Double], t: Double) -> Double {
         var z: Double = 0
         
@@ -50,7 +68,17 @@ extension UIViewController {
         return z
     }
     
-    
+
+    /**
+    Function to get interpolated array
+     
+     - Parameter formula : Enum with possible formuls
+     - Parameter a : First value for in the segment in which the graph will be built
+     - Parameter b : Second value for in the segment in which the graph will be built
+     - Parameter countOfInterpolation: count of interpolated points from [a: b]
+     - Parameter countOfArray : count of exact points
+
+     */
     func getInternolatedArray(formula: PossibleFormuls, a: Double, b: Double, countOfInterpolation: Int, countOfArray: Int) -> (x: [Double], y: [Double]) {
         
         let (xTeoretical, yTeoretical) = getFormulaData(formula: formula, a: a, b: b, count: countOfInterpolation)
@@ -67,6 +95,16 @@ extension UIViewController {
     }
     
     
+    /**
+    Function to get interpolated array
+     
+     - Parameter formula : Enum with possible formuls
+     - Parameter a : First value for in the segment in which the graph will be built
+     - Parameter b : Second value for in the segment in which the graph will be built
+     - Parameter countOfInterpolation: count of interpolated points from [a: b]
+     - Parameter x : x value of point which you want to find
+
+     */
     func getInternolatedYPoint(formula: PossibleFormuls, a: Double, b: Double, countOfInterpolation: Int, x: Double) -> Double {
         
         let (xTeoretical, yTeoretical) = getFormulaData(formula: formula, a: a, b: b, count: countOfInterpolation)
@@ -77,6 +115,20 @@ extension UIViewController {
     }
     
     
+    /**
+    Function to get interpolated array
+     
+     - Parameter formula : Enum with possible formuls
+     - Parameter a : First value for in the segment in which the graph will be built
+     - Parameter b : Second value for in the segment in which the graph will be built
+     - Parameter count : Count  of points
+     
+     - Returns: 4 clousers with 2 arrays (x and y)
+                - teorertical: teorertical graph
+                - test: lagrange graph
+                - error1: Error between normal value and `count` interpolation
+                - error2: Error between `count` interpolation and `count + 1` interpolation
+     */
     func getData(formula: PossibleFormuls, a: Double, b: Double, count: Int) ->
                     (teoretical: (x: [Double], y: [Double]),
                     test: (x: [Double], y: [Double]),
@@ -99,12 +151,10 @@ extension UIViewController {
         /// Error between `count` interpolation and `count + 1` interpolation
         var yErrors2: [Double] = []
         for i in 0..<yTestLagrangeP1.count {
-//            yErrors2.append(-1 * log10((yTestLagrange[i] - yTestLagrangeP1[i])).rounded(digits: 8))
             yErrors2.append((yTestLagrange[i] - yTestLagrangeP1[i]))
 
         }
               
-                 
         let teoretical: (x: [Double], y: [Double]) = (xTeoretical, yTeoretical)
                         
         let test: (x: [Double], y: [Double]) = (xTestLagrange, yTestLagrange)
@@ -115,5 +165,4 @@ extension UIViewController {
 
         return (teoretical, test, error1, error2)
     }
-
 }
