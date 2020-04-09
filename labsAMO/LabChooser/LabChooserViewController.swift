@@ -14,12 +14,79 @@ class LabChooserViewController: UIViewController {
     
     let labNames = ["Лабораторна №1", "Лабораторна №2", "Лабораторна №3", "Лабораторна №4", "Лабораторна №5"]
     
+    let button =  UIButton(type: .custom)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         setupTableView()
         
+        button.frame = CGRect(x: 0, y: 0, width: screenWidth, height: self.navigationController?.navigationBar.frame.size.height ?? 100.0)
+        button.backgroundColor = .clear
+        button.setTitleColor(.black, for: .normal)
+        button.titleColor(for: .normal)
+        button.setTitle("АМО", for: .normal)
+        button.addTarget(self, action: #selector(clickOnButton), for: .touchUpInside)
+        navigationController?.navigationItem.titleView = button
+        navigationItem.titleView = button
     }
+    
+    
+    func rofl(titleMain: String, counter: Int) {
+//        var titleMain = button.title(for: .normal)
+
+        if counter == 25 {
+            rofl2(titleMain: titleMain , counter: 0)
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+            var title = titleMain
+            
+            if title.count == 20 {
+                title.remove(at: title.startIndex)
+            }
+            
+            title.append("О")
+            self.button.setTitle(title, for: .normal)
+            return self.rofl(titleMain: title, counter: counter + 1)
+        }
+    }
+    
+    func rofl2(titleMain: String, counter: Int) {
+        let panove = [" ", "П", "A", "Н", "О", "В", "Е"]
+        
+        if counter == panove.count {
+            print("done")
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                guard let graphVC : GraphViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: GraphViewController.identifier) as? GraphViewController else { return }
+                graphVC.image = UIImage(named: "porev")
+                
+                self.present(graphVC, animated: true, completion: nil)
+            }
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+            var title = titleMain
+            title.remove(at: title.startIndex)
+            title.append(panove[counter])
+            self.button.setTitle(title, for: .normal)
+            return self.rofl2(titleMain: title , counter: counter + 1)
+        }
+    }
+    
+    
+    @objc func clickOnButton() {
+        if button.title(for: .normal)?.count ?? 6 > 5 {
+            self.button.setTitle("AМО", for: .normal)
+        } else {
+            rofl(titleMain: button.title(for: .normal) ?? "", counter: 0)
+        }
+    }
+    
+    
     
     private func setupTableView() {
         tableView.dataSource = self
@@ -62,7 +129,7 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-        if indexPath.row >= 3 {
+        if indexPath.row >= 4 {
             tableView.deselectRow(at: indexPath, animated: true)
             return
         }
@@ -71,10 +138,11 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
         let lab1Storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let lab2Storyboard = UIStoryboard(name: "Lab2", bundle: Bundle.main)
         let lab3Storyboard = UIStoryboard(name: "Lab3", bundle: Bundle.main)
+        let lab4Storyboard = UIStoryboard(name: "Lab4", bundle: Bundle.main)
 
         
         // Array with all storyboards
-        let allLabsStoryoards = [lab1Storyboard, lab2Storyboard, lab3Storyboard]
+        let allLabsStoryoards = [lab1Storyboard, lab2Storyboard, lab3Storyboard, lab4Storyboard]
         
         // Choosen storyboard depend of indexPath.row
         let choosenLabStoryboard = allLabsStoryoards[indexPath.row]
