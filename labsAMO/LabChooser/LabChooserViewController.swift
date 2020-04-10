@@ -34,7 +34,6 @@ class LabChooserViewController: UIViewController {
     
     
     func rofl(titleMain: String, counter: Int) {
-//        var titleMain = button.title(for: .normal)
 
         if counter == 25 {
             rofl2(titleMain: titleMain , counter: 0)
@@ -129,7 +128,7 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         
-        if indexPath.row >= 4 {
+        if indexPath.row >= 5 {
             tableView.deselectRow(at: indexPath, animated: true)
             return
         }
@@ -139,10 +138,12 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
         let lab2Storyboard = UIStoryboard(name: "Lab2", bundle: Bundle.main)
         let lab3Storyboard = UIStoryboard(name: "Lab3", bundle: Bundle.main)
         let lab4Storyboard = UIStoryboard(name: "Lab4", bundle: Bundle.main)
+        let lab5Storyboard = UIStoryboard(name: "Lab5", bundle: Bundle.main)
+
 
         
         // Array with all storyboards
-        let allLabsStoryoards = [lab1Storyboard, lab2Storyboard, lab3Storyboard, lab4Storyboard]
+        let allLabsStoryoards = [lab1Storyboard, lab2Storyboard, lab3Storyboard, lab4Storyboard, lab5Storyboard]
         
         // Choosen storyboard depend of indexPath.row
         let choosenLabStoryboard = allLabsStoryoards[indexPath.row]

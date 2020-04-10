@@ -82,7 +82,6 @@ class FirstTask2LabViewController: UIViewController {
         let end = Date()
         let timeInterval: Double = end.timeIntervalSince(start)
 
-        
         sortedArrayTextLabel.text = "Відстортований [A] = \(sorted.description)"
         startArrayTextLabel.text = "Початковий [A] = \(arrayA.description)"
         timeTextLabel.text = "Елементів: \(arrayA.count) Час: \(timeInterval.rounded(digits: 6))"
@@ -99,9 +98,7 @@ class FirstTask2LabViewController: UIViewController {
     /// Show full start array
     @IBAction func didShowStartArray(_ sender: UIButton) {
         let text = startArrayTextLabel.text
-        guard let vc = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else {
-            return
-        }
+        guard let vc = UIStoryboard(name: "Lab2", bundle: Bundle.main).instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
         vc.text = text
         self.navigationController?.pushViewController(vc, animated: true)
     }

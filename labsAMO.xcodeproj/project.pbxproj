@@ -10,6 +10,8 @@
 		2E1CC2992EDDE954EFFC0973 /* Pods_labsAMO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D480D46C2D5FDB3D4C9855CF /* Pods_labsAMO.framework */; };
 		5F19214A243FABA900DEE9B1 /* Lab4ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F192149243FABA900DEE9B1 /* Lab4ChartViewController.swift */; };
 		5F19214C243FACC300DEE9B1 /* Lab4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19214B243FACC300DEE9B1 /* Lab4+Extensions.swift */; };
+		5F19218B24410CE800DEE9B1 /* Lab5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F19218A24410CE800DEE9B1 /* Lab5.storyboard */; };
+		5F19218D24410D4F00DEE9B1 /* Lab5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19218C24410D4F00DEE9B1 /* Lab5ViewController.swift */; };
 		5F288B3B242FEA4C001BF262 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F288B3A242FEA4C001BF262 /* ErrorViewController.swift */; };
 		5F288B3D2430A745001BF262 /* Lab3+Extencions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F288B3C2430A745001BF262 /* Lab3+Extencions.swift */; };
 		5F363B4023F73AB90058459B /* Lab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F363B3F23F73AB90058459B /* Lab2.storyboard */; };
@@ -47,6 +49,8 @@
 		21B2E5DEB4CC4281BABBEC23 /* Pods-labsAMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-labsAMO.debug.xcconfig"; path = "Target Support Files/Pods-labsAMO/Pods-labsAMO.debug.xcconfig"; sourceTree = "<group>"; };
 		5F192149243FABA900DEE9B1 /* Lab4ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab4ChartViewController.swift; sourceTree = "<group>"; };
 		5F19214B243FACC300DEE9B1 /* Lab4+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lab4+Extensions.swift"; sourceTree = "<group>"; };
+		5F19218A24410CE800DEE9B1 /* Lab5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lab5.storyboard; sourceTree = "<group>"; };
+		5F19218C24410D4F00DEE9B1 /* Lab5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab5ViewController.swift; sourceTree = "<group>"; };
 		5F288B3A242FEA4C001BF262 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		5F288B3C2430A745001BF262 /* Lab3+Extencions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lab3+Extencions.swift"; sourceTree = "<group>"; };
 		5F363B3F23F73AB90058459B /* Lab2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lab2.storyboard; sourceTree = "<group>"; };
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F19218924410CB000DEE9B1 /* Lab5 */ = {
+			isa = PBXGroup;
+			children = (
+				5F19218A24410CE800DEE9B1 /* Lab5.storyboard */,
+				5F19218C24410D4F00DEE9B1 /* Lab5ViewController.swift */,
+			);
+			path = Lab5;
+			sourceTree = "<group>";
+		};
 		5F363B4123F73F1D0058459B /* Lab1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +215,7 @@
 				5F363B4223F73F520058459B /* Lab2 */,
 				5F5151C12421524F00244FBD /* Lab3 */,
 				5F60499F243E5B0D00A4A7DF /* Lab4 */,
+				5F19218924410CB000DEE9B1 /* Lab5 */,
 				5F363B4323F73F640058459B /* Helpers */,
 				5F528C8723F56A92000235BE /* Resoursces */,
 				5F80747B23F692B000F90302 /* Info.plist */,
@@ -304,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F19218B24410CE800DEE9B1 /* Lab5.storyboard in Resources */,
 				5F6049A1243E5B2800A4A7DF /* Lab4.storyboard in Resources */,
 				5F528C8623F567E8000235BE /* MyTableViewCell.xib in Resources */,
 				5FE9677F2407B969000AD157 /* main.txt in Resources */,
@@ -383,6 +398,7 @@
 				5FE9677C2406B433000AD157 /* sortFunctions.swift in Sources */,
 				5F8EF108242EB01500E74220 /* Enum.swift in Sources */,
 				5F80748223F698C600F90302 /* Extensions.swift in Sources */,
+				5F19218D24410D4F00DEE9B1 /* Lab5ViewController.swift in Sources */,
 				5FA050E724068619007F5342 /* ImageViewController.swift in Sources */,
 				5F288B3D2430A745001BF262 /* Lab3+Extencions.swift in Sources */,
 				5F19214A243FABA900DEE9B1 /* Lab4ChartViewController.swift in Sources */,

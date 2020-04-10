@@ -52,9 +52,7 @@ class Lab4ViewController: UIViewController {
         setupButton()
         hideKeyboard()
         
-        
         resultLabel.text = ""
-
     }
     
     @IBAction func didPressGetResult(_ sender: UIButton) {
@@ -124,22 +122,5 @@ class Lab4ViewController: UIViewController {
         
         resultLabel.text = "Корені функції знаходяться на проміжках: \n\(array.description)"
     }
-    
-    
-    
-    
-    
-//    // TEST
-//    func fTest(x: Double) -> Double {
-//        return cos(2.0 / x) - 2.0 * sin(1.0 / x) + 1.0 / x
-//    }
-//
-//    func dfTest(x: Double) -> Double {
-//        return 2.0 * sin(2.0 / x) / pow(x, 2.0) - 1.0 / pow(x, 2.0) + 2.0 * cos(1.0 / x) / pow(x, 2.0)
-//    }
-//
-//    func ddfTest(x: Double) -> Double {
-//        return 2.0 / pow(x, 3.0) - 4.0 * sin(2.0 / x) / pow(x, 3.0) - 4.0 * cos(2.0 / x) / pow(x, 4.0) - 4.0 * cos(1.0 / x) / pow(x, 3.0) + 2.0 * sin(1.0 / x) / pow(x, 4.0)
-//    }
 
 }

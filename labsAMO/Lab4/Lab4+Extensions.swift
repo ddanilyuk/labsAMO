@@ -9,6 +9,21 @@
 import UIKit
 
 extension UIViewController {
+    
+    /**
+    Get result of newtons method
+    
+    - Parameter a: First value for in the segment in which we will find our result
+    - Parameter b: Second value for in the segment in which we will find our result
+    - Parameter epsilon: Accuracy of  this method
+     
+    - Parameter function: My function
+    - Parameter dFunction: First derivative
+    - Parameter ddFunction: Second derivative
+
+    - Throws: ResultError
+
+    */
     func getResult(a: Double, b: Double, epsilon: Double, function: (Double) -> Double, dFunction: (Double) -> Double, ddFunction: (Double) -> Double) throws -> Double {
                 
         if function(a) * function(b) > 0 {
@@ -43,6 +58,18 @@ extension UIViewController {
     }
     
     
+    /**
+     Newtons algorithm
+     
+     - Parameter f : My function
+     - Parameter dF: First derivative
+     - Parameter x0: x0 point
+     - Parameter epsilon: Accuracy of  this method
+     - Parameter maxIter : Count of maximum iteration (defaullt =  99999)
+     
+     - Throws: ResultError
+
+     */
     func newtons_method2(f: (Double) -> Double, dF: (Double) -> Double, x0: Double, epsilon: Double, maxIter: Int = 99999) throws -> Double {
         var xn = x0
         for n in 0..<maxIter {
@@ -63,15 +90,20 @@ extension UIViewController {
         throw ResultError.iterationLimit
     }
         
-    // MY
+    
+    /// My function
     func myFunction(x: Double) -> Double {
         return 10 * atan(5 - x) - 1
     }
 
+    
+    /// First derivative
     func myDFunction(x: Double) -> Double {
         return -10 / ((pow((x - 5), 2)) + 1)
     }
 
+    
+    /// Second derivative
     func myDDFunction(x: Double) -> Double {
         return (20 * (x - 5)) / pow(pow((x - 5), 2) + 1, 2)
     }
