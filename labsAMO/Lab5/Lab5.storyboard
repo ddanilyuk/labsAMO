@@ -14,10 +14,27 @@
                     <view key="view" contentMode="scaleToFill" id="8Rx-NH-gdd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIk-Sd-pW8">
+                                <rect key="frame" x="0.0" y="88" width="414" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="9Fn-61-MRA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fN7-XI-k2V" firstAttribute="trailing" secondItem="lIk-Sd-pW8" secondAttribute="trailing" id="59u-3O-sM7"/>
+                            <constraint firstItem="lIk-Sd-pW8" firstAttribute="leading" secondItem="fN7-XI-k2V" secondAttribute="leading" id="rci-jv-oLu"/>
+                            <constraint firstItem="lIk-Sd-pW8" firstAttribute="top" secondItem="fN7-XI-k2V" secondAttribute="top" id="ufz-0i-GK0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fN7-XI-k2V"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Di-Tl-LdW"/>
+                    <connections>
+                        <outlet property="viewCustom" destination="lIk-Sd-pW8" id="i6h-dY-kBd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dcz-Rg-dRj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
