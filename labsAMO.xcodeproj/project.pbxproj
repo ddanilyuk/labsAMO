@@ -11,7 +11,7 @@
 		5F19214A243FABA900DEE9B1 /* Lab4ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F192149243FABA900DEE9B1 /* Lab4ChartViewController.swift */; };
 		5F19214C243FACC300DEE9B1 /* Lab4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19214B243FACC300DEE9B1 /* Lab4+Extensions.swift */; };
 		5F19218B24410CE800DEE9B1 /* Lab5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F19218A24410CE800DEE9B1 /* Lab5.storyboard */; };
-		5F19218D24410D4F00DEE9B1 /* Lab5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19218C24410D4F00DEE9B1 /* Lab5ViewController.swift */; };
+		5F19218D24410D4F00DEE9B1 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F19218C24410D4F00DEE9B1 /* ResultViewController.swift */; };
 		5F288B3B242FEA4C001BF262 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F288B3A242FEA4C001BF262 /* ErrorViewController.swift */; };
 		5F288B3D2430A745001BF262 /* Lab3+Extencions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F288B3C2430A745001BF262 /* Lab3+Extencions.swift */; };
 		5F363B4023F73AB90058459B /* Lab2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F363B3F23F73AB90058459B /* Lab2.storyboard */; };
@@ -26,8 +26,8 @@
 		5F5847CC24431BA800D1B032 /* MatrixCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5847CB24431BA800D1B032 /* MatrixCustom.swift */; };
 		5F6049A1243E5B2800A4A7DF /* Lab4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F6049A0243E5B2800A4A7DF /* Lab4.storyboard */; };
 		5F6049A3243E5B6D00A4A7DF /* Lab4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6049A2243E5B6D00A4A7DF /* Lab4ViewController.swift */; };
-		5F6A33DC24434D74006396C1 /* MatrixEnterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A33DB24434D74006396C1 /* MatrixEnterView.swift */; };
-		5F6A33DE24435381006396C1 /* MatrixEnterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A33DD24435381006396C1 /* MatrixEnterViewController.swift */; };
+		5F6A33DC24434D74006396C1 /* MatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A33DB24434D74006396C1 /* MatrixView.swift */; };
+		5F6A33DE24435381006396C1 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6A33DD24435381006396C1 /* FirstViewController.swift */; };
 		5F80746E23F692AE00F90302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80746D23F692AE00F90302 /* AppDelegate.swift */; };
 		5F80747223F692AE00F90302 /* LabChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F80747123F692AE00F90302 /* LabChooserViewController.swift */; };
 		5F80747523F692AE00F90302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F80747323F692AE00F90302 /* Main.storyboard */; };
@@ -53,7 +53,7 @@
 		5F192149243FABA900DEE9B1 /* Lab4ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab4ChartViewController.swift; sourceTree = "<group>"; };
 		5F19214B243FACC300DEE9B1 /* Lab4+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lab4+Extensions.swift"; sourceTree = "<group>"; };
 		5F19218A24410CE800DEE9B1 /* Lab5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lab5.storyboard; sourceTree = "<group>"; };
-		5F19218C24410D4F00DEE9B1 /* Lab5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab5ViewController.swift; sourceTree = "<group>"; };
+		5F19218C24410D4F00DEE9B1 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		5F288B3A242FEA4C001BF262 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		5F288B3C2430A745001BF262 /* Lab3+Extencions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lab3+Extencions.swift"; sourceTree = "<group>"; };
 		5F363B3F23F73AB90058459B /* Lab2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lab2.storyboard; sourceTree = "<group>"; };
@@ -68,8 +68,8 @@
 		5F5847CB24431BA800D1B032 /* MatrixCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixCustom.swift; sourceTree = "<group>"; };
 		5F6049A0243E5B2800A4A7DF /* Lab4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lab4.storyboard; sourceTree = "<group>"; };
 		5F6049A2243E5B6D00A4A7DF /* Lab4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lab4ViewController.swift; sourceTree = "<group>"; };
-		5F6A33DB24434D74006396C1 /* MatrixEnterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixEnterView.swift; sourceTree = "<group>"; };
-		5F6A33DD24435381006396C1 /* MatrixEnterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixEnterViewController.swift; sourceTree = "<group>"; };
+		5F6A33DB24434D74006396C1 /* MatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixView.swift; sourceTree = "<group>"; };
+		5F6A33DD24435381006396C1 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		5F80746A23F692AE00F90302 /* labsAMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = labsAMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F80746D23F692AE00F90302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F80747123F692AE00F90302 /* LabChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabChooserViewController.swift; sourceTree = "<group>"; };
@@ -110,10 +110,10 @@
 			isa = PBXGroup;
 			children = (
 				5F19218A24410CE800DEE9B1 /* Lab5.storyboard */,
-				5F19218C24410D4F00DEE9B1 /* Lab5ViewController.swift */,
+				5F6A33DD24435381006396C1 /* FirstViewController.swift */,
+				5F19218C24410D4F00DEE9B1 /* ResultViewController.swift */,
 				5F5847CB24431BA800D1B032 /* MatrixCustom.swift */,
-				5F6A33DD24435381006396C1 /* MatrixEnterViewController.swift */,
-				5F6A33DB24434D74006396C1 /* MatrixEnterView.swift */,
+				5F6A33DB24434D74006396C1 /* MatrixView.swift */,
 			);
 			path = Lab5;
 			sourceTree = "<group>";
@@ -396,7 +396,7 @@
 				5F528C8523F567E8000235BE /* MyTableViewCell.swift in Sources */,
 				5F363B4523F740EC0058459B /* ThirdTaskViewController.swift in Sources */,
 				5F19214C243FACC300DEE9B1 /* Lab4+Extensions.swift in Sources */,
-				5F6A33DC24434D74006396C1 /* MatrixEnterView.swift in Sources */,
+				5F6A33DC24434D74006396C1 /* MatrixView.swift in Sources */,
 				5F5151C32421527500244FBD /* Lab3Task1ViewController.swift in Sources */,
 				5F6049A3243E5B6D00A4A7DF /* Lab4ViewController.swift in Sources */,
 				5FE967812407BD1C000AD157 /* WriteViewController.swift in Sources */,
@@ -408,10 +408,10 @@
 				5FE9677C2406B433000AD157 /* sortFunctions.swift in Sources */,
 				5F8EF108242EB01500E74220 /* Enum.swift in Sources */,
 				5F80748223F698C600F90302 /* Extensions.swift in Sources */,
-				5F19218D24410D4F00DEE9B1 /* Lab5ViewController.swift in Sources */,
+				5F19218D24410D4F00DEE9B1 /* ResultViewController.swift in Sources */,
 				5FA050E724068619007F5342 /* ImageViewController.swift in Sources */,
 				5F288B3D2430A745001BF262 /* Lab3+Extencions.swift in Sources */,
-				5F6A33DE24435381006396C1 /* MatrixEnterViewController.swift in Sources */,
+				5F6A33DE24435381006396C1 /* FirstViewController.swift in Sources */,
 				5F19214A243FABA900DEE9B1 /* Lab4ChartViewController.swift in Sources */,
 				5F288B3B242FEA4C001BF262 /* ErrorViewController.swift in Sources */,
 				5F8EF111242EBF2100E74220 /* Lab3CustomTableViewCell.swift in Sources */,

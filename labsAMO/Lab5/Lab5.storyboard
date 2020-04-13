@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YHW-bt-vzz">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lab5 View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="ko5-ph-LOX">
             <objects>
-                <viewController storyboardIdentifier="Lab5ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ReS-BD-egI" customClass="Lab5ViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Lab5ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ReS-BD-egI" customClass="ResultViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Rx-NH-gdd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-oM-b1e">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-oM-b1e">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -42,27 +40,74 @@
             </objects>
             <point key="canvasLocation" x="1729" y="82"/>
         </scene>
-        <!--Matrix Enter View Controller-->
+        <!--Лаб 5-->
         <scene sceneID="E58-PP-87Y">
             <objects>
-                <viewController id="PF9-VZ-EL4" customClass="MatrixEnterViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PF9-VZ-EL4" customClass="FirstViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gzk-7Z-jxs">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qvy-vd-VC3" customClass="MatrixEnterView" customModule="labsAMO" customModuleProvider="target">
-                                <rect key="frame" x="16" y="104" width="343" height="276"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zgp-ro-hjo">
+                                <rect key="frame" x="190" y="64" width="220" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="OUa-GC-zbg"/>
+                                    <constraint firstAttribute="height" constant="30" id="jgS-9k-Ys3"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="По варіанту"/>
+                                    <segment title="Інша матриця"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" red="0.16002932189999999" green="0.44180585169999997" blue="0.54751423200000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="didChangeSegment:" destination="PF9-VZ-EL4" eventType="valueChanged" id="geH-fY-0A4"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PN-5C-kkH">
+                                <rect key="frame" x="0.0" y="104" width="600" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qvy-vd-VC3" customClass="MatrixView" customModule="labsAMO" customModuleProvider="target">
+                                        <rect key="frame" x="4" y="52" width="592" height="248"/>
+                                    </view>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="2" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZID-75-VDb">
+                                        <rect key="frame" x="253" y="10" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="stepperValueChanged:" destination="PF9-VZ-EL4" eventType="valueChanged" id="aCz-Y9-mhW"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 x 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s3-qf-Eyj">
+                                        <rect key="frame" x="386.5" y="15.5" width="38" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Qvy-vd-VC3" secondAttribute="trailing" constant="4" id="5da-tZ-wVG"/>
+                                    <constraint firstItem="ZID-75-VDb" firstAttribute="top" secondItem="3PN-5C-kkH" secondAttribute="top" constant="10" id="86A-Eq-Chf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qvy-vd-VC3" secondAttribute="bottom" id="IHk-vn-u3c"/>
+                                    <constraint firstItem="Qvy-vd-VC3" firstAttribute="top" secondItem="ZID-75-VDb" secondAttribute="bottom" constant="10" id="KDZ-0v-NhW"/>
+                                    <constraint firstItem="ZID-75-VDb" firstAttribute="centerX" secondItem="3PN-5C-kkH" secondAttribute="centerX" id="NYp-m1-0sM"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qvy-vd-VC3" secondAttribute="bottom" id="X8S-pp-CLn"/>
+                                    <constraint firstItem="Qvy-vd-VC3" firstAttribute="leading" secondItem="3PN-5C-kkH" secondAttribute="leading" constant="4" id="b1U-Kd-tO2"/>
+                                    <constraint firstItem="9s3-qf-Eyj" firstAttribute="leading" secondItem="ZID-75-VDb" secondAttribute="trailing" constant="39.333333333333343" id="u1n-3U-8xw"/>
+                                    <constraint firstItem="9s3-qf-Eyj" firstAttribute="centerY" secondItem="ZID-75-VDb" secondAttribute="centerY" id="w9G-RG-Nhn"/>
+                                    <constraint firstAttribute="height" constant="300" id="xi9-hV-l4h"/>
+                                </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lab5Task1" translatesAutoresizingMaskIntoConstraints="NO" id="KnL-vP-Emr">
+                                <rect key="frame" x="0.0" y="104" width="600" height="300"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4m-cF-2Oe">
-                                <rect key="frame" x="112.66666666666669" y="430" width="150" height="50"/>
+                                <rect key="frame" x="210" y="434" width="180" height="50"/>
                                 <color key="backgroundColor" red="0.16002932189999999" green="0.44180585169999997" blue="0.54751423200000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="BT1-lf-iSF"/>
+                                    <constraint firstAttribute="width" constant="180" id="BT1-lf-iSF"/>
                                     <constraint firstAttribute="height" constant="50" id="s4g-ar-dQs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Результат">
+                                <state key="normal" title="Розв'язати">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -83,23 +128,33 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Qvy-vd-VC3" firstAttribute="top" secondItem="v9H-cd-BF2" secondAttribute="top" constant="16" id="J6z-bc-WT8"/>
-                            <constraint firstItem="v9H-cd-BF2" firstAttribute="trailing" secondItem="Qvy-vd-VC3" secondAttribute="trailing" constant="16" id="Yew-jU-vFp"/>
-                            <constraint firstItem="Qvy-vd-VC3" firstAttribute="height" secondItem="v9H-cd-BF2" secondAttribute="height" multiplier="0.4" id="cWt-uA-Vn3"/>
-                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="centerX" secondItem="v9H-cd-BF2" secondAttribute="centerX" id="oNK-dA-unL"/>
-                            <constraint firstItem="Qvy-vd-VC3" firstAttribute="leading" secondItem="v9H-cd-BF2" secondAttribute="leading" constant="16" id="q4L-rt-lR1"/>
-                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="top" secondItem="Qvy-vd-VC3" secondAttribute="bottom" constant="50" id="zZW-9C-4JL"/>
+                            <constraint firstItem="3PN-5C-kkH" firstAttribute="top" secondItem="Zgp-ro-hjo" secondAttribute="bottom" constant="10" id="Gsw-2V-8Ef"/>
+                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="centerX" secondItem="v9H-cd-BF2" secondAttribute="centerX" id="I7M-rm-3A6"/>
+                            <constraint firstItem="Zgp-ro-hjo" firstAttribute="centerX" secondItem="v9H-cd-BF2" secondAttribute="centerX" id="Sng-20-9ch"/>
+                            <constraint firstItem="v9H-cd-BF2" firstAttribute="trailing" secondItem="3PN-5C-kkH" secondAttribute="trailing" id="Twf-MV-XMY"/>
+                            <constraint firstItem="v9H-cd-BF2" firstAttribute="trailing" secondItem="KnL-vP-Emr" secondAttribute="trailing" id="VHn-OX-XPW"/>
+                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="top" secondItem="3PN-5C-kkH" secondAttribute="bottom" constant="30" id="bV3-fv-5N4"/>
+                            <constraint firstItem="3PN-5C-kkH" firstAttribute="leading" secondItem="v9H-cd-BF2" secondAttribute="leading" id="jxJ-wM-k1g"/>
+                            <constraint firstItem="KnL-vP-Emr" firstAttribute="leading" secondItem="v9H-cd-BF2" secondAttribute="leading" id="mkP-VU-xh5"/>
+                            <constraint firstItem="Zgp-ro-hjo" firstAttribute="top" secondItem="v9H-cd-BF2" secondAttribute="top" constant="20" id="pjJ-Md-v86"/>
+                            <constraint firstItem="KnL-vP-Emr" firstAttribute="top" secondItem="Zgp-ro-hjo" secondAttribute="bottom" constant="10" id="xRQ-72-WbY"/>
+                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="top" secondItem="KnL-vP-Emr" secondAttribute="bottom" constant="30" id="y5P-Xo-Mhz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v9H-cd-BF2"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UHa-1T-Cbh"/>
+                    <navigationItem key="navigationItem" title="Лаб 5" id="UHa-1T-Cbh"/>
                     <connections>
+                        <outlet property="imageView" destination="KnL-vP-Emr" id="U7A-4V-EUp"/>
                         <outlet property="matrixEnteredView" destination="Qvy-vd-VC3" id="lPv-gs-gQb"/>
+                        <outlet property="segmentControl" destination="Zgp-ro-hjo" id="AY7-Rv-RSN"/>
+                        <outlet property="stepper" destination="ZID-75-VDb" id="dmt-i6-yy3"/>
+                        <outlet property="stepperLabel" destination="9s3-qf-Eyj" id="TaA-I8-FDm"/>
+                        <outlet property="viewWithMatrixAndStepper" destination="3PN-5C-kkH" id="lzb-m9-VB6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trk-4M-kwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="82"/>
+            <point key="canvasLocation" x="850.39999999999998" y="81.2807881773399"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hu0-Hi-FTH">
@@ -120,4 +175,7 @@
             <point key="canvasLocation" x="-28" y="82"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lab5Task1" width="798" height="264"/>
+    </resources>
 </document>

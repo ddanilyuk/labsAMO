@@ -11,7 +11,7 @@ import UIKit
 
 class MatrixCustom {
 
-//    static var maximumValue: Double
+    static var maximumValue: Double = 0.0
     
     var data: [Double] = []
     
@@ -21,8 +21,8 @@ class MatrixCustom {
     
     var columns: Int
     
+    
     init(rows: Int, columns: Int) {
-        
         self.rows = rows
         self.columns = columns
         self.data = Array(repeating: 0.0, count: rows * columns)
@@ -46,6 +46,7 @@ class MatrixCustom {
         } else {
             assert(false, "rows != dataAnswers.count")
         }
+        
     }
     
     
@@ -63,10 +64,12 @@ class MatrixCustom {
         self.dataAnswers = dataAnswers
     }
     
+    
     func copy(with zone: NSZone? = nil) -> MatrixCustom {
         let copy = MatrixCustom(data: data, dataAnswers: dataAnswers, rows: rows, columns: columns)
         return copy
     }
+    
     
     func indexIsValid(row: Int, column: Int) -> Bool {
         return row >= 0 && row < rows && column >= 0 && column < columns
@@ -170,7 +173,7 @@ class MatrixCustom {
             if isMinus {
                 return "‒\(formattedNumber) "
             } else {
-                return "   " + formattedNumber + " "
+                return "  " + formattedNumber + " "
             }
         } else {
             return ""

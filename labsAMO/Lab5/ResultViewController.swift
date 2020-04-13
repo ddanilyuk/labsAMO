@@ -8,7 +8,9 @@
 
 import UIKit
 
-class Lab5ViewController: UIViewController {
+class ResultViewController: UIViewController {
+    
+    @IBOutlet weak var textView: UITextView!
     
     let array: [[Double]] = [[7.09,  1.17, -2.23],
                              [0.43,  1.40, -0.62],
@@ -18,40 +20,50 @@ class Lab5ViewController: UIViewController {
     
     var mainString = String()
     
-    @IBOutlet weak var textView: UITextView!
-    
     var matrixFromSegue: MatrixCustom?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let matrix = matrixFromSegue else { return }
 
-        setupButton()
-        hideKeyboard()
-        
-//        textView.font = UIFont(name:"TrebuchetMS", size: 25)
-        textView.font = UIFont(name:"MalayalamSangamMN", size: 25)
-        
-        guard let matrix = matrixFromSegue else {
-            return
+        if matrixFromSegue?.columns ?? 4 == 5 {
+            textView.font = UIFont(name:"MalayalamSangamMN", size: 20)
+        } else if matrixFromSegue?.columns ?? 4 == 4 {
+            textView.font = UIFont(name:"MalayalamSangamMN", size: 22)
+        } else {
+            textView.font = UIFont(name:"MalayalamSangamMN", size: 25)
         }
-//        let myMatrix = MatrixCustom(dataDoubleArray: array, dataAnswers: arrayAnswers)
-        
-        mainString += "    Start matrix \n"
-        
+
+        mainString += "    Початкова матриця\n"
         mainString += matrix.description
-        
+
         let result = gauss(matrix: matrix)
-        mainString += "\n"
+
+        mainString += "\n    Отримання результатів\n"
+
         for i in 0..<result.count {
             mainString += "  x\(i + 1) = \(result[i].rounded(digits: 6))\n"
             print("x\(i + 1) = \(result[i])")
         }
-        
-        textView.text = mainString
 
+        textView.text = mainString
+    }
+    
+    /// To fix problem with offset
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
     
+    /**
+    Gauss algorithm
+     
+     - Parameter matrix : Start matrix with answers
+     - Parameter numIter: Parameter for recursion
+        
+    */
     func gauss(matrix: MatrixCustom, numIter: Int = 0) -> [Double] {
         if numIter == matrix.rows - 1 {
             return reverse(matrixAfterGaussMethod: matrix)
@@ -82,17 +94,22 @@ class Lab5ViewController: UIViewController {
                                    answer: (answerNext - M * answer),
                                    in: i)
         }
-        mainString += "\n    \(numIter + 1) STEP\n"
+        mainString += "\n    \(numIter + 1) Крок\n"
         mainString += matrixToEdit.description
-
-        print(matrixToEdit.description)
         
         return gauss(matrix: matrixToEdit, numIter: numIter + 1)
     }
     
     
+    /**
+     Reverse
+     
+     - Parameter matrix: MatrixAfterGaussMethod
+     
+     - Returns: Array with [X]
+     
+     */
     func reverse(matrixAfterGaussMethod matrix: MatrixCustom) -> [Double] {
-        
         /// Array like [0.0, 0.0, 0.0]
         var resultArray: [Double] = Array(repeating: 0.0, count: matrix.rows)
         
@@ -114,6 +131,16 @@ class Lab5ViewController: UIViewController {
     }
     
     
+    /**
+     Get new line from 2 lines
+     
+     - Parameter row: Main row
+     - Parameter nextRow: Second row
+     - Parameter M: M
+     
+     - Returns: New row
+     
+     */
     func makeStep(row: [Double], nextRow: [Double], M: Double) -> [Double] {
         
         var result: [Double] = []
