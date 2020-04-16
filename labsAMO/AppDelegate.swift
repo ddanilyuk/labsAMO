@@ -27,10 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nav1.navigationItem.largeTitleDisplayMode = .always
         vc.navigationItem.largeTitleDisplayMode = .always
         vc.navigationController?.navigationBar.prefersLargeTitles = true
-//        vc.navigationItem.title = "Лаби АМО"
-        
+
         nav1.viewControllers = [vc]
-        
         
         window?.rootViewController = nav1
         window?.makeKeyAndVisible()

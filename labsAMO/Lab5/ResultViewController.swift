@@ -50,6 +50,7 @@ class ResultViewController: UIViewController {
         textView.text = mainString
     }
     
+    
     /// To fix problem with offset
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()

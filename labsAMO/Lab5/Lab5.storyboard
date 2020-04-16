@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YHW-bt-vzz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,13 +10,13 @@
         <!--Result View Controller-->
         <scene sceneID="ko5-ph-LOX">
             <objects>
-                <viewController storyboardIdentifier="Lab5ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ReS-BD-egI" customClass="ResultViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ReS-BD-egI" customClass="ResultViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Rx-NH-gdd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-oM-b1e">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -40,16 +41,16 @@
             </objects>
             <point key="canvasLocation" x="1729" y="82"/>
         </scene>
-        <!--Лаб 5-->
+        <!--Лабораторна №5-->
         <scene sceneID="E58-PP-87Y">
             <objects>
                 <viewController id="PF9-VZ-EL4" customClass="FirstViewController" customModule="labsAMO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gzk-7Z-jxs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zgp-ro-hjo">
-                                <rect key="frame" x="190" y="64" width="220" height="31"/>
+                                <rect key="frame" x="97" y="188" width="220" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="OUa-GC-zbg"/>
                                     <constraint firstAttribute="height" constant="30" id="jgS-9k-Ys3"/>
@@ -58,25 +59,25 @@
                                     <segment title="По варіанту"/>
                                     <segment title="Інша матриця"/>
                                 </segments>
-                                <color key="selectedSegmentTintColor" red="0.16002932189999999" green="0.44180585169999997" blue="0.54751423200000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="selectedSegmentTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="didChangeSegment:" destination="PF9-VZ-EL4" eventType="valueChanged" id="geH-fY-0A4"/>
                                 </connections>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3PN-5C-kkH">
-                                <rect key="frame" x="0.0" y="104" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="228" width="414" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qvy-vd-VC3" customClass="MatrixView" customModule="labsAMO" customModuleProvider="target">
-                                        <rect key="frame" x="4" y="52" width="592" height="248"/>
+                                        <rect key="frame" x="4" y="52" width="406" height="248"/>
                                     </view>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="2" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZID-75-VDb">
-                                        <rect key="frame" x="253" y="10" width="94" height="32"/>
+                                        <rect key="frame" x="160" y="10" width="94" height="32"/>
                                         <connections>
                                             <action selector="stepperValueChanged:" destination="PF9-VZ-EL4" eventType="valueChanged" id="aCz-Y9-mhW"/>
                                         </connections>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 x 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s3-qf-Eyj">
-                                        <rect key="frame" x="386.5" y="15.5" width="38" height="21"/>
+                                        <rect key="frame" x="293.5" y="15.5" width="38" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -97,11 +98,11 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lab5Task1" translatesAutoresizingMaskIntoConstraints="NO" id="KnL-vP-Emr">
-                                <rect key="frame" x="0.0" y="104" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="228" width="414" height="300"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4m-cF-2Oe">
-                                <rect key="frame" x="210" y="434" width="180" height="50"/>
-                                <color key="backgroundColor" red="0.16002932189999999" green="0.44180585169999997" blue="0.54751423200000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="117" y="538" width="180" height="50"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="BT1-lf-iSF"/>
                                     <constraint firstAttribute="height" constant="50" id="s4g-ar-dQs"/>
@@ -125,24 +126,34 @@
                                     <action selector="didPressGetResult:" destination="PF9-VZ-EL4" eventType="touchUpInside" id="dYB-He-FVL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Метод Гауса з послідовним виключенням невідомих" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9K-OJ-DWb">
+                                <rect key="frame" x="20" y="108" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="v9H-cd-BF2" firstAttribute="trailing" secondItem="t9K-OJ-DWb" secondAttribute="trailing" constant="20" id="7kd-YL-P5Q"/>
                             <constraint firstItem="3PN-5C-kkH" firstAttribute="top" secondItem="Zgp-ro-hjo" secondAttribute="bottom" constant="10" id="Gsw-2V-8Ef"/>
                             <constraint firstItem="I4m-cF-2Oe" firstAttribute="centerX" secondItem="v9H-cd-BF2" secondAttribute="centerX" id="I7M-rm-3A6"/>
                             <constraint firstItem="Zgp-ro-hjo" firstAttribute="centerX" secondItem="v9H-cd-BF2" secondAttribute="centerX" id="Sng-20-9ch"/>
                             <constraint firstItem="v9H-cd-BF2" firstAttribute="trailing" secondItem="3PN-5C-kkH" secondAttribute="trailing" id="Twf-MV-XMY"/>
                             <constraint firstItem="v9H-cd-BF2" firstAttribute="trailing" secondItem="KnL-vP-Emr" secondAttribute="trailing" id="VHn-OX-XPW"/>
-                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="top" secondItem="3PN-5C-kkH" secondAttribute="bottom" constant="30" id="bV3-fv-5N4"/>
+                            <constraint firstItem="t9K-OJ-DWb" firstAttribute="top" secondItem="v9H-cd-BF2" secondAttribute="top" constant="20" id="WRy-HM-j7i"/>
+                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="top" secondItem="3PN-5C-kkH" secondAttribute="bottom" constant="10" id="bV3-fv-5N4"/>
+                            <constraint firstItem="t9K-OJ-DWb" firstAttribute="centerX" secondItem="v9H-cd-BF2" secondAttribute="centerX" id="f8a-lc-NU0"/>
+                            <constraint firstItem="t9K-OJ-DWb" firstAttribute="leading" secondItem="v9H-cd-BF2" secondAttribute="leading" constant="20" id="i1R-wm-FJa"/>
                             <constraint firstItem="3PN-5C-kkH" firstAttribute="leading" secondItem="v9H-cd-BF2" secondAttribute="leading" id="jxJ-wM-k1g"/>
                             <constraint firstItem="KnL-vP-Emr" firstAttribute="leading" secondItem="v9H-cd-BF2" secondAttribute="leading" id="mkP-VU-xh5"/>
-                            <constraint firstItem="Zgp-ro-hjo" firstAttribute="top" secondItem="v9H-cd-BF2" secondAttribute="top" constant="20" id="pjJ-Md-v86"/>
+                            <constraint firstItem="Zgp-ro-hjo" firstAttribute="top" secondItem="t9K-OJ-DWb" secondAttribute="bottom" constant="20" id="pjJ-Md-v86"/>
                             <constraint firstItem="KnL-vP-Emr" firstAttribute="top" secondItem="Zgp-ro-hjo" secondAttribute="bottom" constant="10" id="xRQ-72-WbY"/>
-                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="top" secondItem="KnL-vP-Emr" secondAttribute="bottom" constant="30" id="y5P-Xo-Mhz"/>
+                            <constraint firstItem="I4m-cF-2Oe" firstAttribute="top" secondItem="KnL-vP-Emr" secondAttribute="bottom" constant="10" id="y5P-Xo-Mhz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v9H-cd-BF2"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Лаб 5" id="UHa-1T-Cbh"/>
+                    <navigationItem key="navigationItem" title="Лабораторна №5" id="UHa-1T-Cbh"/>
                     <connections>
                         <outlet property="imageView" destination="KnL-vP-Emr" id="U7A-4V-EUp"/>
                         <outlet property="matrixEnteredView" destination="Qvy-vd-VC3" id="lPv-gs-gQb"/>
@@ -162,7 +173,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YHW-bt-vzz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="28k-VA-2A0">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

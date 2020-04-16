@@ -69,7 +69,17 @@ class Lab4ViewController: UIViewController {
         
         do {
             let result = try getResult(a: a, b: b, epsilon: epsilon, function: myFunction, dFunction: myDFunction, ddFunction: myDDFunction)
-            resultLabel.text = "x0 = \(result) \nf(x0) = \(myFunction(x: result))"
+            let y = myFunction(x: result)
+
+            let attributedFirstPart = NSMutableAttributedString(string: "x0 = \(result) \nf(x0) = ")
+            let attributedSecondPart = NSMutableAttributedString(attributedString: y.scientificFormatted)
+
+            
+            let resultString: NSMutableAttributedString = NSMutableAttributedString()
+            resultString.append(attributedFirstPart)
+            resultString.append(attributedSecondPart)
+            
+            resultLabel.attributedText = resultString
 
         } catch ResultError.divisionByZero {
             alert = UIAlertController(title: "Помилка", message: "Ділення на 0 (f`(x) = 0)", preferredStyle: .alert)

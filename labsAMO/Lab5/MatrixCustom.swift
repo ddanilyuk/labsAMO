@@ -11,6 +11,8 @@ import UIKit
 
 class MatrixCustom {
 
+    /// Not used
+    /// - Todo: need to use maximum value to know what how to show numbers with maximumFractionDigits
     static var maximumValue: Double = 0.0
     
     var data: [Double] = []

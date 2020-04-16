@@ -37,6 +37,7 @@ class ErrorViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    
     @IBAction func didPressOkButton(_ sender: UIButton) {
         
         let x = Double(xTextField.text ?? "") ?? 0.0

@@ -86,7 +86,7 @@ class MatrixView: UIView {
                 textField.autocorrectionType = .no
                 textField.autocapitalizationType = .none
                 textField.textAlignment = .center
-                textField.keyboardType = .decimalPad
+                textField.keyboardType = .numbersAndPunctuation
                 textField.translatesAutoresizingMaskIntoConstraints = true
                 textField.backgroundColor = .clear
                 textField.font = UIFont(name: "Helvetica", size: 15) ?? UIFont()

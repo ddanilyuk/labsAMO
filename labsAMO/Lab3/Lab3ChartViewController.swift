@@ -24,7 +24,7 @@ class Lab3ChartViewController: UIViewController, ChartViewDelegate {
     var countSegue: Int = 10
     var formula: PossibleFormuls = .myVariant
 
-    var  isError2: Bool = false
+    var isError2: Bool = false
     
     
     override func viewDidLoad() {

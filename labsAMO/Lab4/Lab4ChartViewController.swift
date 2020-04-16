@@ -110,12 +110,11 @@ class Lab4ChartViewController: UIViewController, ChartViewDelegate {
         default:
             break
         }
-        
-        
-        
+
         let line = LineChartDataSet(entries: values, label: nameLine)
         
         line.setColor(.red)
+        line.setColor(#colorLiteral(red: 0, green: 0.4492976665, blue: 0.5591170788, alpha: 1))
         line.setCircleColor(.gray)
         line.lineWidth = 1.5
         line.circleRadius = 0

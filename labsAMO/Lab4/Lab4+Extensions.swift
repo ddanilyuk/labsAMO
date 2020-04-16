@@ -46,7 +46,7 @@ extension UIViewController {
             }
             
             do {
-                return try newtons_method2(f: function, dF: dFunction, x0: temp, epsilon: epsilon)
+                return try newtons_method(f: function, dF: dFunction, x0: temp, epsilon: epsilon)
             } catch ResultError.divisionByZero {
                 throw ResultError.divisionByZero
             } catch ResultError.iterationLimit {
@@ -70,7 +70,7 @@ extension UIViewController {
      - Throws: ResultError
 
      */
-    func newtons_method2(f: (Double) -> Double, dF: (Double) -> Double, x0: Double, epsilon: Double, maxIter: Int = 99999) throws -> Double {
+    func newtons_method(f: (Double) -> Double, dF: (Double) -> Double, x0: Double, epsilon: Double, maxIter: Int = 99999) throws -> Double {
         var xn = x0
         for n in 0..<maxIter {
             let fxn = f(xn)
