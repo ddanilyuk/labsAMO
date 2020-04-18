@@ -10,22 +10,12 @@ import UIKit
 
 
 class MatrixCustom {
-
-    /// Not used
-    /// - Todo: need to use maximum value to know what how to show numbers with maximumFractionDigits
-//    static var maximumValue: Double = 0.0
     
     var maximum: Double = 0.0
     
     var data: [Double] = [] {
         didSet {
-            
-            
             let max = data.max() ?? 0.0
-//            if MatrixCustom.maximumValue < max {
-//                MatrixCustom.maximumValue = max
-//            }
-            
             if self.maximum < max {
                 self.maximum = max
             }
@@ -35,9 +25,6 @@ class MatrixCustom {
     var dataAnswers: [Double] = [] {
         didSet {
             let max = dataAnswers.max() ?? 0.0
-//            if MatrixCustom.maximumValue < max {
-//                MatrixCustom.maximumValue = max
-//            }
             if self.maximum < max {
                 self.maximum = max
             }
@@ -49,6 +36,7 @@ class MatrixCustom {
     var columns: Int
     
     
+    /// Empty matrix
     init(rows: Int, columns: Int) {
         self.rows = rows
         self.columns = columns
@@ -58,7 +46,6 @@ class MatrixCustom {
     
     
     init(data: [Double], dataAnswers: [Double], rows: Int, columns: Int) {
-        
         self.rows = rows
         self.columns = columns
         
@@ -73,26 +60,21 @@ class MatrixCustom {
         } else {
             assert(false, "rows != dataAnswers.count")
         }
-        
     }
     
     
     init(dataDoubleArray: [[Double]], dataAnswers: [Double]) {
-        
         self.rows = dataDoubleArray[0].count
         self.columns = dataAnswers.count
         
+        var dataArray: [Double] = []
         for row in dataDoubleArray {
             for element in row {
-                data.append(element)
+                dataArray.append(element)
             }
         }
         
-        let max = data.max() ?? 0.0
-        if self.maximum < max {
-            self.maximum = max
-        }
-        
+        self.data = dataArray
         self.dataAnswers = dataAnswers
     }
     
@@ -108,65 +90,66 @@ class MatrixCustom {
     }
     
     
+    func findAbsMaxInColumn(column: Int) -> (rowNumber: Int, maxInColumn: Double) {
+        var rowNumber = 0
+        var maxInColumn: Double = abs(self[0, column])
         
+        for i in 1..<self.columns {
+            let element = self[i, column]
+            if maxInColumn < abs(element) {
+                maxInColumn = element
+                rowNumber = i
+            }
+        }
+        
+        return (rowNumber: rowNumber, maxInColumn: maxInColumn)
+    }
+    
+    
+    func findMaxInRow(row: Int) -> Double? {
+        let rowWithAnswer = getRow(index: row)
+        var maxInRow: Double = rowWithAnswer.row[0]
+        
+        for element in rowWithAnswer.row {
+            if maxInRow < element {
+                maxInRow = element
+            }
+        }
+        
+        return maxInRow
+    }
+    
+    
     var description: String {
-        var descriptionString = ""
+        var descriptionString = String()
 
         for row in 0..<rows {
             for column in 0..<columns {
                 let element = self[row, column]
+                
                 if element < 0 {
-                    if column == 0 {
-                        descriptionString += "− 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
-                    } else {
-                        descriptionString += " − 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
+                    if column != 0 {
+                        descriptionString += " "
                     }
+                    descriptionString += "− 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
                 } else {
-                    if column == 0 {
-                        descriptionString += " 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
-                    } else {
-                        descriptionString += " + 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
+                    if column != 0 {
+                        descriptionString += " +"
                     }
-//                    descriptionString += "\(formatNumber(element))x\(column + 1)  "
+                    descriptionString += " 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
                 }
             }
+            
             if self.dataAnswers[row] < 0 {
                 descriptionString += " = −\(formatNumber(abs(self.dataAnswers[row])))"
             } else {
                 descriptionString += " =  \(formatNumber(abs(self.dataAnswers[row])))"
             }
+            
             descriptionString += "\n"
         }
         return descriptionString
     }
-    
-//
-//    var description: String {
-//        var descriptionString = ""
-//
-//        for row in 0..<rows {
-//            for column in 0..<columns {
-//                let element = self[row, column]
-//                if element < 0 {
-//                    descriptionString += "−x\(column + 1)⋅\(formatNumber(abs(element)))"
-//                } else {
-//                    if column == 0 {
-//                        descriptionString += "   x\(column + 1)⋅\(formatNumber(abs(element)))"
-//                    } else {
-//                        descriptionString += "+x\(column + 1)⋅\(formatNumber(abs(element)))"
-//                    }
-////                    descriptionString += "\(formatNumber(element))x\(column + 1)  "
-//                }
-//            }
-//            if self.dataAnswers[row] < 0 {
-//                descriptionString += "= −\(formatNumber(abs(self.dataAnswers[row])))"
-//            } else {
-//                descriptionString += "=   \(formatNumber(abs(self.dataAnswers[row])))"
-//            }
-//            descriptionString += "\n"
-//        }
-//        return descriptionString
-//    }
     
     
     subscript(row: Int, column: Int) -> Double {
@@ -183,7 +166,6 @@ class MatrixCustom {
     
     
     func getRow(index: Int) -> (row: [Double], answer: Double) {
-        
         var row: [Double] = []
         for i in 0..<columns {
             let element = self[index, i]
@@ -218,7 +200,6 @@ class MatrixCustom {
     
     @discardableResult
     func insertRow(row: [Double], answer: Double, in index: Int) -> Bool {
-        
         if row.count != columns {
             assert(false, "line.count != columns")
             return false
@@ -237,12 +218,10 @@ class MatrixCustom {
     
     
     func formatNumber(_ number: Double) -> String {
-
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 2 // minimum number of fraction digits on right
         formatter.maximumFractionDigits = 2 // maximum number of fraction digits on right, or comment for all available
         
-        print(self.maximum)
         if self.maximum < 10 {
             formatter.minimumIntegerDigits = 1
         } else if self.maximum < 100 {
@@ -257,17 +236,5 @@ class MatrixCustom {
         } else {
             return ""
         }
-        
-//        let isMinus = number >= 0.0 ? false : true
-        
-//        if let formattedNumber = formatter.string(from: NSNumber.init(value: abs(number))) {
-//            if isMinus {
-//                return "‒\(formattedNumber) "
-//            } else {
-//                return "  " + formattedNumber + " "
-//            }
-//        } else {
-//            return ""
-//        }
     }
 }

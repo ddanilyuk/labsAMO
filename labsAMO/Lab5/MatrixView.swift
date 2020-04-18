@@ -55,52 +55,28 @@ class MatrixView: UIView {
             actualRowStackView.spacing = spacing
             actualRowStackView.axis = .horizontal
             
-            for j in 0..<matrixSize + 1 {
+            for columnNumber in 0..<matrixSize + 1 {
 
                 let size = CGRect(x: 0, y: 0, width: (actualRowStackView.bounds.width - spacingInsetsColumn) / CGFloat(matrixSize + 1), height: (actualRowStackView.bounds.height))
                 
                 let viewToInsert = UIView(frame: size)
-                
-                let textField = UITextField(frame: CGRect(x: 25, y: (size.height - 30) / 2, width: size.width - 25, height: 30))
-                
-                
-                let label = UILabel(frame: CGRect(x: 0, y: 3, width: 20, height: 25))
-                if j == matrixSize {
-                    label.text = "="
-                } else {
-                    label.text = "x\(j + 1)"
-                }
-                let iconContainerView: UIView = UIView(frame:
-                               CGRect(x: 0, y: (actualRowStackView.bounds.height  - 30 ) / 2, width: 20, height: 30))
-                iconContainerView.addSubview(label)
-            
-
-                viewToInsert.addSubview(iconContainerView)
-                
                 viewToInsert.widthAnchor.constraint(equalToConstant: size.width).isActive = true
                 viewToInsert.heightAnchor.constraint(equalToConstant: size.height).isActive = true
                 
-//                textField.widthAnchor.constraint(equalToConstant: size.width - 20).isActive = true
-//                textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+                let textField = UITextField(frame: CGRect(x: 25, y: (size.height - 30) / 2, width: size.width - 25, height: 30))
+                let label = UILabel(frame: CGRect(x: 0, y: 3, width: 20, height: 25))
+                let labelContainerView = UIView(frame: CGRect(x: 0, y: (actualRowStackView.bounds.height  - 30 ) / 2,
+                                                              width: 20, height: 30))
                 
-                textField.autocorrectionType = .no
-                textField.autocapitalizationType = .none
-//                textField.placeholder = "0"
-                textField.textAlignment = .center
-                textField.keyboardType = .numbersAndPunctuation
-                textField.translatesAutoresizingMaskIntoConstraints = true
-                textField.backgroundColor = .clear
-                textField.font = UIFont(name: "Helvetica", size: 15) ?? UIFont()
-                
-                textField.borderStyle = .roundedRect
-                textField.layer.borderColor = UIColor.gray.cgColor
-                
+                label.text = columnNumber == matrixSize ? "=" : "x\(columnNumber + 1)"
+                labelContainerView.addSubview(label)
+        
+                setupTextField(textField)
+                textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+                textFieldArray.append(textField)
 
                 viewToInsert.addSubview(textField)
-
-                textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-
-                textFieldArray.append(textField)
+                viewToInsert.addSubview(labelContainerView)
 
                 actualRowStackView.addArrangedSubview(viewToInsert)
             }
@@ -118,28 +94,38 @@ class MatrixView: UIView {
     }
     
     
-    func getMatrixResult() {
-        let matrix = MatrixCustom(rows: matrixSize, columns: matrixSize)
+    func setupTextField(_ textField: UITextField) {
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
+        textField.textAlignment = .center
+        textField.keyboardType = .numbersAndPunctuation
+        textField.translatesAutoresizingMaskIntoConstraints = true
+        textField.backgroundColor = .clear
+        textField.font = UIFont(name: "Helvetica", size: 15) ?? UIFont()
         
-        var column = 0
-
+        textField.borderStyle = .roundedRect
+        textField.layer.borderColor = UIColor.gray.cgColor
+    }
+    
+    
+    func getMatrixResult() {
+        var dataArray: [Double] = []
+        var answerArray: [Double] = []
+        var counter: Int = 0
+        
         for i in 0..<textFieldArray.count {
-            let row = (i / (matrixSize + 1))
-            
-            let textField = textFieldArray[i]
-                        
-            let double = (textField.text ?? "").doubleValue
+            let value = (textFieldArray[i].text ?? "").doubleValue
 
-            if column == matrixSize {
-                column = 0
-                
-                matrix.dataAnswers[row] = double
-                continue
+            if counter == matrixSize {
+                counter = 0
+                answerArray.append(value)
+            } else {
+                counter += 1
+                dataArray.append(value)
             }
-            matrix[row, column] = double
-            column += 1
-
         }
+    
+        let matrix = MatrixCustom(data: dataArray, dataAnswers: answerArray, rows: matrixSize, columns: matrixSize)
         delegate?.didMatrixChanged(self, matrix: matrix)
     }
 }
