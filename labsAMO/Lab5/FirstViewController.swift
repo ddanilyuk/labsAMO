@@ -58,7 +58,7 @@ class FirstViewController: UIViewController {
         
         matrixEnteredView.delegate = self
     }
-    
+        
     
     private func setupMatrixView() {
         
@@ -94,7 +94,7 @@ class FirstViewController: UIViewController {
             return
         }
         if matrixToSegue == nil {
-            
+            matrixToSegue = MatrixCustom(rows: sliderValue, columns: sliderValue)
         }
         resultVC.matrixFromSegue = matrixToSegue
         
@@ -109,9 +109,9 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
-//        if Int(sender.value) != sliderValue {
-//        }
+
         sliderValue = Int(sender.value)
+//        MatrixCustom.maximumValue = 0.0
     }
 }
 
@@ -119,7 +119,8 @@ class FirstViewController: UIViewController {
 extension FirstViewController: MatrixDelgate {
     
     func didMatrixChanged(_ matrixEnterView: MatrixView, matrix: MatrixCustom) {
-            matrixToSegue = matrix
+        matrixToSegue = matrix
+//        print("in didMatrixChanged = ", matrixToSegue?.maximum ?? 0.0)
     }
     
 }

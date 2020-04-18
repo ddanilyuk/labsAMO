@@ -22,20 +22,28 @@ class ResultViewController: UIViewController {
     
     var matrixFromSegue: MatrixCustom?
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .portrait }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        textView.isHidden = true
+        textView.alpha = 0.0
         guard let matrix = matrixFromSegue else { return }
+        
+        
 
-        if matrixFromSegue?.columns ?? 4 == 5 {
-            textView.font = UIFont(name:"MalayalamSangamMN", size: 20)
-        } else if matrixFromSegue?.columns ?? 4 == 4 {
-            textView.font = UIFont(name:"MalayalamSangamMN", size: 22)
+        if matrix.columns == 5 {
+            textView.font = UIFont(name:"Menlo-Regular", size: 16)
+        } else if matrix.columns == 4 {
+            textView.font = UIFont(name:"Menlo-Regular", size: 18)
         } else {
-            textView.font = UIFont(name:"MalayalamSangamMN", size: 25)
+            textView.font = UIFont(name:"Menlo-Regular", size: 20)
         }
 
         mainString += "    Початкова матриця\n"
+        print("MatrixCustom.maximumValue", matrix.maximum)
         mainString += matrix.description
 
         let result = gauss(matrix: matrix)
@@ -48,6 +56,31 @@ class ResultViewController: UIViewController {
         }
 
         textView.text = mainString
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 1.8, animations: {
+            self.textView.alpha = 1.0
+        })
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+
+        UIView.setAnimationsEnabled(false)
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        UIView.setAnimationsEnabled(true)
+
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIView.setAnimationsEnabled(false)
+        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        UIView.setAnimationsEnabled(true)
     }
     
     

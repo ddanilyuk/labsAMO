@@ -80,11 +80,12 @@ class MatrixView: UIView {
                 viewToInsert.widthAnchor.constraint(equalToConstant: size.width).isActive = true
                 viewToInsert.heightAnchor.constraint(equalToConstant: size.height).isActive = true
                 
-                textField.widthAnchor.constraint(equalToConstant: size.width - 20).isActive = true
-                textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+//                textField.widthAnchor.constraint(equalToConstant: size.width - 20).isActive = true
+//                textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
                 
                 textField.autocorrectionType = .no
                 textField.autocapitalizationType = .none
+//                textField.placeholder = "0"
                 textField.textAlignment = .center
                 textField.keyboardType = .numbersAndPunctuation
                 textField.translatesAutoresizingMaskIntoConstraints = true
@@ -112,6 +113,7 @@ class MatrixView: UIView {
 
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        textField.placeholder = ""
         getMatrixResult()
     }
     

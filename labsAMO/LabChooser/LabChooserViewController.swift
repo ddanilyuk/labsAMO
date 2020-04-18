@@ -107,6 +107,8 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == labNames.count {
             // Cell with my name and variant
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MyTableViewCell.identifier, for: indexPath) as? MyTableViewCell else { return UITableViewCell() }
+            cell.isUserInteractionEnabled = false
+            
             return cell
         } else {
             let cell = UITableViewCell(style: .default, reuseIdentifier: "1")
@@ -117,6 +119,8 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
+    
+    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -179,6 +183,7 @@ extension LabChooserViewController: UITableViewDelegate, UITableViewDataSource {
             return 100
         }
     }
+    
     
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

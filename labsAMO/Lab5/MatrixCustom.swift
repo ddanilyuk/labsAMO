@@ -13,11 +13,36 @@ class MatrixCustom {
 
     /// Not used
     /// - Todo: need to use maximum value to know what how to show numbers with maximumFractionDigits
-    static var maximumValue: Double = 0.0
+//    static var maximumValue: Double = 0.0
     
-    var data: [Double] = []
+    var maximum: Double = 0.0
     
-    var dataAnswers: [Double] = []
+    var data: [Double] = [] {
+        didSet {
+            
+            
+            let max = data.max() ?? 0.0
+//            if MatrixCustom.maximumValue < max {
+//                MatrixCustom.maximumValue = max
+//            }
+            
+            if self.maximum < max {
+                self.maximum = max
+            }
+        }
+    }
+    
+    var dataAnswers: [Double] = [] {
+        didSet {
+            let max = dataAnswers.max() ?? 0.0
+//            if MatrixCustom.maximumValue < max {
+//                MatrixCustom.maximumValue = max
+//            }
+            if self.maximum < max {
+                self.maximum = max
+            }
+        }
+    }
     
     var rows: Int
     
@@ -63,6 +88,11 @@ class MatrixCustom {
             }
         }
         
+        let max = data.max() ?? 0.0
+        if self.maximum < max {
+            self.maximum = max
+        }
+        
         self.dataAnswers = dataAnswers
     }
     
@@ -78,21 +108,65 @@ class MatrixCustom {
     }
     
     
+        
     var description: String {
         var descriptionString = ""
-        
+
         for row in 0..<rows {
             for column in 0..<columns {
                 let element = self[row, column]
-
-                descriptionString += formatNumber(element)
+                if element < 0 {
+                    if column == 0 {
+                        descriptionString += "− 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
+                    } else {
+                        descriptionString += " − 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
+                    }
+                } else {
+                    if column == 0 {
+                        descriptionString += " 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
+                    } else {
+                        descriptionString += " + 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
+                    }
+//                    descriptionString += "\(formatNumber(element))x\(column + 1)  "
+                }
             }
-            
-            descriptionString += "= \(formatNumber(self.dataAnswers[row]))"
+            if self.dataAnswers[row] < 0 {
+                descriptionString += " = −\(formatNumber(abs(self.dataAnswers[row])))"
+            } else {
+                descriptionString += " =  \(formatNumber(abs(self.dataAnswers[row])))"
+            }
             descriptionString += "\n"
         }
         return descriptionString
     }
+    
+//
+//    var description: String {
+//        var descriptionString = ""
+//
+//        for row in 0..<rows {
+//            for column in 0..<columns {
+//                let element = self[row, column]
+//                if element < 0 {
+//                    descriptionString += "−x\(column + 1)⋅\(formatNumber(abs(element)))"
+//                } else {
+//                    if column == 0 {
+//                        descriptionString += "   x\(column + 1)⋅\(formatNumber(abs(element)))"
+//                    } else {
+//                        descriptionString += "+x\(column + 1)⋅\(formatNumber(abs(element)))"
+//                    }
+////                    descriptionString += "\(formatNumber(element))x\(column + 1)  "
+//                }
+//            }
+//            if self.dataAnswers[row] < 0 {
+//                descriptionString += "= −\(formatNumber(abs(self.dataAnswers[row])))"
+//            } else {
+//                descriptionString += "=   \(formatNumber(abs(self.dataAnswers[row])))"
+//            }
+//            descriptionString += "\n"
+//        }
+//        return descriptionString
+//    }
     
     
     subscript(row: Int, column: Int) -> Double {
@@ -167,18 +241,33 @@ class MatrixCustom {
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 2 // minimum number of fraction digits on right
         formatter.maximumFractionDigits = 2 // maximum number of fraction digits on right, or comment for all available
-        formatter.minimumIntegerDigits = 1 // minimum number of integer digits on left (necessary so that 0.5 don't return .500)
         
-        let isMinus = number >= 0.0 ? false : true
+        print(self.maximum)
+        if self.maximum < 10 {
+            formatter.minimumIntegerDigits = 1
+        } else if self.maximum < 100 {
+            formatter.minimumIntegerDigits = 2
+        } else {
+            formatter.minimumIntegerDigits = 3
+        }
         
-        if let formattedNumber = formatter.string(from: NSNumber.init(value: abs(number))) {
-            if isMinus {
-                return "‒\(formattedNumber) "
-            } else {
-                return "  " + formattedNumber + " "
-            }
+        
+        if let formattedNumber = formatter.string(from: NSNumber.init(value: number)) {
+            return formattedNumber
         } else {
             return ""
         }
+        
+//        let isMinus = number >= 0.0 ? false : true
+        
+//        if let formattedNumber = formatter.string(from: NSNumber.init(value: abs(number))) {
+//            if isMinus {
+//                return "‒\(formattedNumber) "
+//            } else {
+//                return "  " + formattedNumber + " "
+//            }
+//        } else {
+//            return ""
+//        }
     }
 }
