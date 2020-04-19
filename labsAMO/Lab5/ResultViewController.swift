@@ -42,8 +42,8 @@ class ResultViewController: UIViewController {
         mainString += matrix.description
 
         let result = gauss(matrix: matrix)
+        
         mainString += "\n    Отримання результатів\n"
-
         for i in 0..<result.count {
             mainString += "  x\(i + 1) = \(result[i].rounded(digits: 6))\n"
         }
@@ -86,11 +86,13 @@ class ResultViewController: UIViewController {
      
      - Parameter matrix : Start matrix with answers
      - Parameter numIter: Parameter for recursion
+     
+     - Returns: Array with answers ([X])
         
     */
     func gauss(matrix: MatrixCustom, numIter: Int = 0) -> [Double] {
         if numIter == matrix.rows - 1 {
-            return reverse(matrixAfterGaussMethod: matrix)
+            return reverseGauss(matrixAfterGaussMethod: matrix)
         }
         
         let matrixToEdit = matrix.copy()
@@ -98,7 +100,7 @@ class ResultViewController: UIViewController {
         let divider = matrixToEdit[numIter, numIter]
         
         if divider == 0 {
-            let rowNumberWithMaxValue = matrixToEdit.findAbsMaxInColumn(column: numIter).rowNumber
+            let rowNumberWithMaxValue = matrixToEdit.findAbsMaxInColumn(column: numIter, from: numIter).rowNumber
             
             mainString += "\nОскільки дільник [\(numIter + 1), \(numIter + 1)] дорівнює 0\nВізьмемо рядок \(rowNumberWithMaxValue) з найбілшим значенням та переставим його\n"
 
@@ -135,10 +137,10 @@ class ResultViewController: UIViewController {
      
      - Parameter matrix: MatrixAfterGaussMethod
      
-     - Returns: Array with [X]
+     - Returns: Array with answers ([X])
      
      */
-    func reverse(matrixAfterGaussMethod matrix: MatrixCustom) -> [Double] {
+    func reverseGauss(matrixAfterGaussMethod matrix: MatrixCustom) -> [Double] {
         /// Array like [0.0, 0.0, 0.0]
         var resultArray: [Double] = Array(repeating: 0.0, count: matrix.rows)
         

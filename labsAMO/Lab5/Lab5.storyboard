@@ -76,8 +76,11 @@
                                             <action selector="stepperValueChanged:" destination="PF9-VZ-EL4" eventType="valueChanged" id="aCz-Y9-mhW"/>
                                         </connections>
                                     </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 x 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s3-qf-Eyj">
-                                        <rect key="frame" x="293.5" y="15.5" width="38" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 x 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9s3-qf-Eyj">
+                                        <rect key="frame" x="293.5" y="15.5" width="50" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="WWS-Bw-Yay"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -165,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trk-4M-kwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850.39999999999998" y="81.2807881773399"/>
+            <point key="canvasLocation" x="849.27536231884062" y="81.026785714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hu0-Hi-FTH">

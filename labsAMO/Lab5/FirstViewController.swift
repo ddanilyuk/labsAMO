@@ -23,16 +23,17 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var matrixEnteredView: MatrixView!
     
     var sliderValue: Int = 3 {
-            didSet {
-                stepperLabel.text = "\(sliderValue) x \(sliderValue)"
-                matrixEnteredView.subviews.forEach({ $0.removeFromSuperview() })
-                matrixEnteredView.matrixSize = sliderValue
-            }
+        didSet {
+            stepperLabel.text = "\(sliderValue) x \(sliderValue + 1)"
+            matrixEnteredView.subviews.forEach({ $0.removeFromSuperview() })
+            matrixEnteredView.matrixSize = sliderValue
         }
+    }
 
     let array: [[Double]] = [[7.09,  1.17, -2.23],
                              [0.43,  1.40, -0.62],
                              [3.21, -4.25,  2.13]]
+    
 //    let array: [[Double]] = [[7.09,  1.17, -2.23],
 //                             [0.00,  0.00, -0.62],
 //                             [7.09, -4.25,  2.13]]
@@ -47,9 +48,9 @@ class FirstViewController: UIViewController {
         hideKeyboard()
         setupButton()
         setupStepper()
+        setupSegmentControl()
         
         matrixToSegue = MatrixCustom(dataDoubleArray: array, dataAnswers: arrayAnswers)
-
         imageView.isHighlighted = false
         viewWithMatrixAndStepper.isHidden = true
     }

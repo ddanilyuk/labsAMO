@@ -13,6 +13,10 @@ class MatrixCustom {
     
     var maximum: Double = 0.0
     
+    var rows: Int
+    
+    var columns: Int
+    
     var data: [Double] = [] {
         didSet {
             let max = data.max() ?? 0.0
@@ -31,10 +35,6 @@ class MatrixCustom {
         }
     }
     
-    var rows: Int
-    
-    var columns: Int
-    
     
     /// Empty matrix
     init(rows: Int, columns: Int) {
@@ -49,16 +49,17 @@ class MatrixCustom {
         self.rows = rows
         self.columns = columns
         
-        if rows * columns == data.count {
-            self.data = data
-        } else {
+        if rows * columns != data.count {
             assert(false, "rows * columns != data.count")
+            return
+        } else if rows != dataAnswers.count {
+            assert(false, "rows != dataAnswers.count")
+            return
         }
         
-        if rows == dataAnswers.count {
+        defer {
+            self.data = data
             self.dataAnswers = dataAnswers
-        } else {
-            assert(false, "rows != dataAnswers.count")
         }
     }
     
@@ -74,8 +75,10 @@ class MatrixCustom {
             }
         }
         
-        self.data = dataArray
-        self.dataAnswers = dataAnswers
+        defer {
+            self.data = dataArray
+            self.dataAnswers = dataAnswers
+        }
     }
     
     
@@ -90,11 +93,11 @@ class MatrixCustom {
     }
     
     
-    func findAbsMaxInColumn(column: Int) -> (rowNumber: Int, maxInColumn: Double) {
+    func findAbsMaxInColumn(column: Int, from row: Int = 0) -> (rowNumber: Int, maxInColumn: Double) {
         var rowNumber = 0
-        var maxInColumn: Double = abs(self[0, column])
+        var maxInColumn: Double = abs(self[row, column])
         
-        for i in 1..<self.columns {
+        for i in row + 1..<self.columns {
             let element = self[i, column]
             if maxInColumn < abs(element) {
                 maxInColumn = element
@@ -128,26 +131,20 @@ class MatrixCustom {
                 let element = self[row, column]
                 
                 if element < 0 {
-                    if column != 0 {
-                        descriptionString += " "
-                    }
+                    descriptionString += column != 0 ? " " : ""
                     descriptionString += "− 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
                 } else {
-                    if column != 0 {
-                        descriptionString += " +"
-                    }
+                    descriptionString += column != 0 ? " +" : ""
                     descriptionString += " 𝗑\(column + 1)⋅\(formatNumber(abs(element)))"
                 }
             }
             
-            if self.dataAnswers[row] < 0 {
-                descriptionString += " = −\(formatNumber(abs(self.dataAnswers[row])))"
-            } else {
-                descriptionString += " =  \(formatNumber(abs(self.dataAnswers[row])))"
-            }
+            /// Add answer value
+            descriptionString += self.dataAnswers[row] < 0 ? " = −\(formatNumber(abs(self.dataAnswers[row])))" : " =  \(formatNumber(abs(self.dataAnswers[row])))"
             
             descriptionString += "\n"
         }
+        
         return descriptionString
     }
     
@@ -229,7 +226,6 @@ class MatrixCustom {
         } else {
             formatter.minimumIntegerDigits = 3
         }
-        
         
         if let formattedNumber = formatter.string(from: NSNumber.init(value: number)) {
             return formattedNumber
